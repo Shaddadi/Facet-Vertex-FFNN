@@ -1,0 +1,14 @@
+P = 1:4;
+N1 = 1:5;
+N2 = 1:9;
+for p = P
+    for n1 = N1
+        for n2 = N2
+            filename = ['output_info_',num2str(p),'_',num2str(n1),'_',num2str(n2),'.txt'];
+            delimiterIn = ' ';
+            A = importdata(filename);
+            
+        end
+    end
+
+end
