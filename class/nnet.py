@@ -18,18 +18,30 @@ class nnetwork:
         self.numLayer = len(W)
         self.pool = multiprocessing.Pool(1) # multiprocessing
 
+    def verification(self):
+        print('Designed to be replaced')
+
     # nn output of input starting from mth layer
     def layerOutput(self, inputPoly, m):
         # print('Layer: ',m)
 
         inputSets = [inputPoly]
         for i in range(m, self.numLayer):
-            outputPolys = []
-            for aPoly in inputSets:
-                outputPolys.extend(self.singleLayerOutput(aPoly, i))
-            inputSets = outputPolys
+            inputSets_len = len(inputSets)
+            n = 0
+            while n < inputSets_len:
+                aPoly = inputSets.pop(0)
+                n += 1
+                inputSets.extend(self.singleLayerOutput(aPoly, i))
+
+        verify_result = self.verification(inputSets)
+        if not verify_result:
+            print('unsafe')
 
         return inputSets
+
+
+
 
 
     # point output of nn
@@ -65,12 +77,11 @@ class nnetwork:
                 return [inputPoly]
 
         polys = [inputPoly]
-        for i in range(len(W)):
-            splited_polys = []
-            for aPoly in polys:
-                splited_polys.extend(self.splitPoly(aPoly, i))
 
-            polys = splited_polys
+        splited_polys = []
+        for aPoly in polys:
+            splited_polys.extend(self.relu_layer(aPoly, np.array([]), flag=False))
+        polys = splited_polys
 
         return polys
 
@@ -88,7 +99,48 @@ class nnetwork:
 
         return outputPolySets
 
+    def relu_layer(self, im_fl, neurons, flag=True):
+        if (neurons.shape[0] == 0) and flag:
+            return [im_fl]
 
+        new_neurons, new_neurons_neg = self.get_valid_neurons(im_fl, neurons)
+
+        im_fl.vertices[:,new_neurons_neg] = 0.0
+
+        if new_neurons.shape[0] == 0:
+            return [im_fl]
+
+        fls = self.splitPoly(im_fl, new_neurons[0])
+
+        new_neurons = new_neurons[1:]
+
+        all_fls = []
+        for afl in fls:
+            all_fls.extend(self.relu_layer(afl, new_neurons))
+
+        return all_fls
+
+    def get_valid_neurons(self, afl, neurons):
+        if neurons.shape[0] ==0:
+            flag_neg = afl.vertices<=0
+            temp_neg = np.all(flag_neg, 0)
+            valid_neurons_neg = np.asarray(np.nonzero(temp_neg)).T[:,0]
+            temp_pos = np.all(afl.vertices>=0, 0)
+            neurons_sum = temp_neg+temp_pos
+            valid_neurons_neg_pos = np.asarray(np.nonzero(neurons_sum==False)).T[:,0]
+            return valid_neurons_neg_pos, valid_neurons_neg
+
+        elements = afl.vertices[:, neurons]
+        flag_neg = (elements <= 0)
+        temp_neg = np.all(flag_neg, 0)
+        temp_pos = np.all(elements>=0, 0)
+        temp_sum = temp_neg + temp_pos
+        indx_neg_pos = np.asarray(np.nonzero(temp_sum == False)).T[:,0]
+        valid_neurons_neg_pos = neurons[indx_neg_pos]
+        indx_neg = np.asarray(np.nonzero(temp_neg)).T[:,0]
+        valid_neurons_neg = neurons[indx_neg]
+
+        return valid_neurons_neg_pos, valid_neurons_neg
 
     def __getstate__(self):
         self_dict = self.__dict__.copy()

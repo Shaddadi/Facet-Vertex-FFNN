@@ -1,0 +1,2 @@
+time elapsed: 48.265446 seconds 
+number of polytopes: 984701 

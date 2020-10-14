@@ -12,8 +12,9 @@ import multiprocessing
 from functools import partial
 from scipy.io import loadmat
 import numpy as np
+import types
 
-def nn_reachable_sets(filemat, p, ii ,jj, lb, ub,  unsafe_mat, unsafe_vec):
+def nn_reachable_sets(filemat, p, ii ,jj, lb, ub, verify):
     W = filemat['W'][0]
     b = filemat['b'][0]
     range_for_scaling = filemat['range_for_scaling'][0]
@@ -23,18 +24,13 @@ def nn_reachable_sets(filemat, p, ii ,jj, lb, ub,  unsafe_mat, unsafe_vec):
         lb[i] = (lb[i] - means_for_scaling[i]) / range_for_scaling[i]
         ub[i] = (ub[i] - means_for_scaling[i]) / range_for_scaling[i]
 
-    norm_mat = range_for_scaling[5] * np.eye(5)
-    norm_vec = means_for_scaling[5] * np.ones((5, 1))
-
     nnet0 = nnet.nnetwork(W, b)
-
+    nnet0.verification = verify
     initial_input = cl.cubelattice(lb, ub).to_lattice()
-	
     cores = multiprocessing.cpu_count()
 
     start_time = time.time()
     outputSets = ffnn.nnet_output(nnet0, initial_input, ("parallel", cores))
-    # resl = verify_parallel(outputSets, norm_mat, norm_vec, unsafe_mat, unsafe_vec)
 
     elapsed_time = time.time() - start_time
     filename = "logs/output_info_"+str(p)+"_"+str(ii)+"_"+str(jj)+".txt"
@@ -43,57 +39,165 @@ def nn_reachable_sets(filemat, p, ii ,jj, lb, ub,  unsafe_mat, unsafe_vec):
     file.write('number of polytopes: %d \n' % len(outputSets))
     # file.write('verification result: '+ resl+'\n')
     file.close()
-    outputSets =[]
-
-def verify_parallel(polySets, norm_mat, norm_vec, unsafe_mat, unsafe_vec):
-    cpus = multiprocessing.cpu_count()
-    pool = multiprocessing.Pool(8)
-    unsafeSets = []
-    argus = partial(verify_p, norm_mat=norm_mat, norm_vec=norm_vec,unsafe_mat=unsafe_mat,unsafe_vec=unsafe_vec)
-    unsafeSets.extend(pool.map(argus, polySets))
-    resl = "UNSAT(Safe)"
-    if np.any(np.array(unsafeSets)):
-        resl = "SAT(Unsafe)"
-
-    return resl
 
 
-def verify_p(apoly, norm_mat, norm_vec, unsafe_mat, unsafe_vec):
-    norm_unsafe_mat = np.dot(np.dot(unsafe_mat,norm_mat), apoly.M)
-    norm_unsafe_vec = np.dot(np.dot(unsafe_mat,norm_mat),apoly.b) + np.dot(unsafe_mat, norm_vec) - unsafe_vec
-
-    sign_vec = np.dot(norm_unsafe_mat, np.array(apoly.vertex).transpose()) + norm_unsafe_vec
-    sign_vec = np.all(sign_vec<=0, axis=0)
-    violation = np.any(sign_vec)
-    return violation
-
-
-def main_run():
+if __name__ == "__main__":
     # p = int(sys.argv[1:][0])
     # i = int(sys.argv[1:][1])
     # j = int(sys.argv[1:][2])
     p = 3
     i = 1
-    j = 4
-    print("Property "+str(p)+"; "+"Network: N"+str(i)+"_"+str(j))
+    j = 7
+    print("Property " + str(p) + "; " + "Network: N" + str(i) + "_" + str(j))
 
-    nn_path = "nnet-mat-files/ACASXU_run2a_"+ str(i)+ "_" + str(j)+"_batch_2000.mat"
+    nn_path = "nnet-mat-files/ACASXU_run2a_" + str(i) + "_" + str(j) + "_batch_2000.mat"
     filemat = loadmat(nn_path)
 
-    if p == 3:
+    if p == 1:
+        lb = [55947.691, -3.141592, -3.141592, 1145, 0]
+        ub = [60760, 3.141592, 3.141592, 1200, 60]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                vs = afv.vertices
+                if np.any(vs[0, :] >= 3.9911):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 2:
+        lb = [55947.691, -3.141592, -3.141592, 1145, 0]
+        ub = [60760, 3.141592, 3.141592, 1200, 60]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmax(afv.vertices, axis=1)
+                if np.any(indx == 0):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 3:
         lb = [1500, -0.06, 3.1, 980, 960]
-        ub = [1800, 0.06, 3.14, 1200, 1200]
-        unsafe_mat = np.array([[1, -1, 0, 0, 0], [1, 0, -1, 0, 0], [1, 0, 0, -1, 0], [1, 0, 0, 0, -1]])
-        unsafe_vec = np.array([[0], [0], [0], [0]])
-    if p == 4:
+        ub = [1800, 0.06, 3.141592, 1200, 1200]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx == 0):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 4:
         lb = [1500, -0.06, 0, 1000, 700]
         ub = [1800, 0.06, 0, 1200, 800]
-        unsafe_mat = np.array([[1, -1, 0, 0, 0], [1, 0, -1, 0, 0], [1, 0, 0, -1, 0], [1, 0, 0, 0, -1]])
-        unsafe_vec = np.array([[0], [0], [0], [0]])
 
-    nn_reachable_sets(filemat, p, i ,j, lb, ub, unsafe_mat, unsafe_vec)
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx == 0):
+                    safe = False
+                    break
+            return safe
 
+    elif p == 5:
+        lb = [250, 0.2, -3.141592, 100, 0]
+        ub = [400, 0.4, -3.141592 + 0.005, 400, 400]
 
-if __name__ == "__main__":
-    main_run()
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx != 4):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 6.1:
+        lb = [12000, 0.7, -3.141592, 100, 0]
+        ub = [62000, 3.141592, -3.141592 + 0.005, 1200, 1200]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx != 0):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 6.2:
+        lb = [12000, -3.141592, -3.141592, 100, 0]
+        ub = [62000, -0.7, -3.141592 + 0.005, 1200, 1200]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx != 0):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 7:
+        lb = [0, -3.141592, -3.141592, 100, 0]
+        ub = [60760, 3.141592, 3.141592, 1200, 1200]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx == 3) or np.any(indx == 4):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 8:
+        lb = [0, -3.141592, -0.1, 600, 600]
+        ub = [60760, -0.75 * 3.141592, 0.1, 1200, 1200]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if (2 in indx) or (3 in indx) or (4 in indx):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 9:
+        lb = [2000, -0.4, -3.141592, 100, 0]
+        ub = [7000, -0.14, -3.141592 + 0.01, 150, 150]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx != 3):
+                    safe = False
+                    break
+            return safe
+
+    elif p == 10:
+        lb = [36000, 0.7, -3.141592, 900, 600]
+        ub = [60760, 3.141592, -3.141592 + 0.01, 1200, 1200]
+
+        def verification(outputs):
+            safe = True
+            for afv in outputs:
+                indx = np.argmin(afv.vertices, axis=1)
+                if np.any(indx != 0):
+                    safe = False
+                    break
+            return safe
+
+    else:
+        raise RuntimeError(f"property {p} is not defined!")
+
+    nn_reachable_sets(filemat, p, i, j, lb, ub, verify=verification)
 

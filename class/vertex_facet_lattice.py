@@ -21,6 +21,7 @@ class VFL:
 
 
     def single_split_relu(self, idx):
+
         elements = self.vertices[:,idx]
         if np.any(elements==0.0):
             sys.exit('Hyperplane intersect with vertices!')
@@ -29,12 +30,7 @@ class VFL:
         positive_id = np.asarray(positive_bool.nonzero()).T
         negative_bool = np.invert(positive_bool)
         negative_id = np.asarray(negative_bool.nonzero()).T
-        if np.all(positive_bool):
-            return self, []
-        if np.all(negative_bool):
-            self.vertices[:,idx] = 0.0
-            return [], self
-        
+
         if len(positive_id)>=len(negative_id):
             less_bool = negative_bool
             more_bool = positive_bool
@@ -53,7 +49,7 @@ class VFL:
         elements0 = elements[less_bool]
         elements1 = elements[more_bool]
 
-        time0 = 0
+
         for n, facets in enumerate(vs_facets0):
             temp = np.logical_and(vs_facets1, facets)
             edge_vs_bool = np.sum(temp,axis=1)==self.dim-1 # share dim-1 facets
@@ -63,7 +59,7 @@ class VFL:
             alpha = abs(elem0) / (abs(elem0) + abs(elem1s))
             p_new = p0 + ((p1s - p0).T* alpha).T
             p_init_new = p_init0 + ((p_init1s - p_init0).T* alpha).T
-            # t0 = time.time()
+
             if n == 0:
                 new_vs = p_new
                 new_vs_init = p_init_new
@@ -73,10 +69,6 @@ class VFL:
                 new_vs_init = np.concatenate((new_vs_init, p_init_new))
                 new_vs_facets = np.concatenate((new_vs_facets,temp[edge_vs_bool]))
 
-            # print('Sub time: ', time.time()-t0)
-            # time0 = time0 + time.time() - t0
-
-        # print('Time: ', time0)
 
         new_vs_facets0 = np.concatenate((vs_facets0, new_vs_facets))
         sub_vs_facets0 = new_vs_facets0[:,np.any(vs_facets0,0)]
