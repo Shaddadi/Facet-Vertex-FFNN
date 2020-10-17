@@ -16,7 +16,8 @@ class nnetwork:
         self.b = b
         self.c = 0
         self.numLayer = len(W)
-        self.pool = multiprocessing.Pool(1) # multiprocessing
+        self.start_time = 0
+        self.filename = ''
 
     def verification(self):
         print('Designed to be replaced')
@@ -37,11 +38,13 @@ class nnetwork:
         verify_result = self.verification(inputSets)
         if not verify_result:
             print('unsafe')
+            file = open(self.filename, 'w')
+            file.write('time elapsed: %f seconds \n' % (time.time()-self.start_time))
+            file.write('result: unsafe')
+            file.close()
+            os.system('pkill -9 python')
 
         return inputSets
-
-
-
 
 
     # point output of nn
@@ -142,10 +145,10 @@ class nnetwork:
 
         return valid_neurons_neg_pos, valid_neurons_neg
 
-    def __getstate__(self):
-        self_dict = self.__dict__.copy()
-        del self_dict['pool']
-        return self_dict
-
-    def __setstate__(self, state):
-        self.__dict__.update(state)
+    # def __getstate__(self):
+    #     self_dict = self.__dict__.copy()
+    #     del self_dict['pool']
+    #     return self_dict
+    #
+    # def __setstate__(self, state):
+    #     self.__dict__.update(state)

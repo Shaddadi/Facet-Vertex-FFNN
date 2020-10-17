@@ -1,0 +1,23 @@
+Using settings profile: 'multibfs'. Override num process: None
+input ub: [0.6798577687061284, 0.49999989597792077, 0.49999989597792077, 0.5, -0.45]
+input lb: [0.6, -0.49999989597792077, -0.49999989597792077, 0.45, -0.5]
+Running in parallel with 20 processes
+
+Worker 1 found a confirmed counterexample
+(0.0 sec) Q: 0, Sets: 0/1  (0.0%) ETA: - (expected 1 stars)   
+(0.1 sec) Q: 0, Sets: 17/28  (0.049%) ETA: 3.47 min (expected 34816 stars)   
+(0.2 sec) Q: 5, Sets: 784/930  (47.915%) ETA: 0.2 sec (expected 1636 stars)   (0.3 sec) Q: 0, Sets: 1826/1934  (51.534%) ETA: 0.3 sec (expected 3543 stars)   
+(0.4 sec) Q: 1, Sets: 2671/2805  (55.228%) ETA: 0.3 sec (expected 4836 stars)   (0.5 sec) Q: 0, Sets: 3711/3876  (57.713%) ETA: 0.4 sec (expected 6430 stars)   (0.6 sec) Q: 0, Sets: 4721/4877  (59.22%) ETA: 0.4 sec (expected 7972 stars)   (0.7 sec) Q: 2, Sets: 5755/5920  (60.794%) ETA: 0.5 sec (expected 9466 stars)   
+(0.8 sec) Q: 0, Sets: 6750/6909  (63.701%) ETA: 0.5 sec (expected 10596 stars)   (0.9 sec) Q: 0, Sets: 7803/7937  (66.375%) ETA: 0.5 sec (expected 11756 stars)   (1.0 sec) Q: 0, Sets: 8815/8936  (66.867%) ETA: 0.5 sec (expected 13183 stars)   (1.1 sec) Q: 1, Sets: 9783/9929  (67.806%) ETA: 0.5 sec (expected 14428 stars)   (1.2 sec) Q: 0, Sets: 10773/10897  (68.485%) ETA: 0.6 sec (expected 15730 stars)   (1.3 sec) Q: 3, Sets: 11853/11981  (69.745%) ETA: 0.6 sec (expected 16995 stars)   (1.4 sec) Q: 0, Sets: 12824/12965  (70.436%) ETA: 0.6 sec (expected 18207 stars)   (1.5 sec) Q: 0, Sets: 13793/13931  (70.639%) ETA: 0.6 sec (expected 19526 stars)   
+(1.6 sec) Q: 0, Sets: 14616/14713  (73.5%) ETA: 0.6 sec (expected 19886 stars)   (1.7 sec) Q: 0, Sets: 15496/15600  (77.996%) ETA: 0.5 sec (expected 19868 stars)   (1.8 sec) Q: 0, Sets: 16290/16379  (78.125%) ETA: 0.5 sec (expected 20851 stars)   
+
+Total Stars: 16864
+Runtime: 1.9 sec
+Completed work frac: 0.7984873056411743
+Num Stars Copied Between Processes: 178
+Num Lps During Enumeration: 162678
+Total Num Lps: 179641
+
+Result: network is UNSAFE, confirmed counterexample:
+Input: [0.6798577687061284, 0.01125073320287645, -0.4462527638912474, 0.45, -0.4957670907452722]
+Output: [0.021397565967725275, -0.01958262999564552, 0.021113261642953338, -0.01739255812872234, 0.019253459415910446]

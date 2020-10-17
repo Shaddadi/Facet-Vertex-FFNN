@@ -1,0 +1,20 @@
+Using settings profile: 'multibfs'. Override num process: None
+input ub: [0.6798577687061284, 0.49999989597792077, 0.49999989597792077, 0.5, -0.45]
+input lb: [0.6, -0.49999989597792077, -0.49999989597792077, 0.45, -0.5]
+Running in parallel with 20 processes
+(0.0 sec) Q: 0, Sets: 0/1  (0.0%) ETA: - (expected 1 stars)   
+(0.1 sec) Q: 11, Sets: 226/255  (38.322%) ETA: 0.2 sec (expected 590 stars)   
+
+
+
+Worker 12 found a confirmed counterexample
+Total Stars: 990
+Runtime: 0.2 sec
+Completed work frac: 0.4680026173591614
+Num Stars Copied Between Processes: 58
+Num Lps During Enumeration: 7535
+Total Num Lps: 8534
+
+Result: network is UNSAFE, confirmed counterexample:
+Input: [0.6798577687061284, 0.01761731945949624, -0.2777519728126335, 0.5, -0.45]
+Output: [0.023187493785854624, -0.018136850550570873, 0.021189677901242845, -0.0185404560685403, 0.0222296513231]

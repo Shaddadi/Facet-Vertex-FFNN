@@ -13,7 +13,7 @@ def nnet_output(nnet, inputPoly, method=("non_parallel",)):
         print("Total time on split: ", nnet.c)
         return outputSets
     else:
-        local_cpu = os.cpu_count()
+
         if method[1]>local_cpu:
             print("The number of local cores is", local_cpu)
             print("The selected number of cores is too large")
@@ -46,9 +46,9 @@ def nnet_output(nnet, inputPoly, method=("non_parallel",)):
         for apoly in nputSets0:
             nputSets.extend(nnet.singleLayerOutput(apoly, 1))
 
-        pool = multiprocessing.Pool(cpus)
         # pool.map(partial(nnet.layerOutput, m=2), nputSets)
         outputSets.extend(pool.imap(partial(nnet.layerOutput, m=2), nputSets))
+        pool.close()
         outputSets = [item for sublist in outputSets for item in sublist]
         print('Time: ', time.time()-t0)
         return outputSets

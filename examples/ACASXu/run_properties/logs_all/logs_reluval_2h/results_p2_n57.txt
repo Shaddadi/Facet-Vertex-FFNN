@@ -1,0 +1,16 @@
+progress: [=                                                 running property 2 with network ./ReluVal/nnet/ACASXU_run2a_5_7_batch_2000.nnet
+input ranges:
+[0.679858 0.500000 0.500000 0.500000 -0.450000 ]
+[0.600000 -0.500000 -0.500000 0.450000 -0.500000 ]
+check mode: NORMAL_CHECK_MODE
+] 0.10%progress: [=                                                 ] 0.20%progress: [=                                                 ] 0.29%progress: [=                                                 ] 0.39%progress: [=                                                 ] 0.49%progress: [=                                                 ] 0.59%progress: [=                                                 ] 0.68%progress: [=                                                 ] 0.78%progress: [=                                                 ] 0.88%progress: [=                                                 ] 0.98%progress: [=                                                 ] 1.07%progress: [=                                                 ] 1.17%
+adv found:
+adv is: [60760.000000 0.000000 0.000000 1200.000000 60.000000 ]
+it's output is: [0.000000 -0.010049 -0.049126 -0.009118 -0.047372 ]
+
+adv found:
+adv is: [60760.000000 0.000000 0.000000 1186.250000 60.000000 ]
+it's output is: [0.000000 -0.010067 -0.049148 -0.009136 -0.047384 ]
+time: 0.017161 
+
+

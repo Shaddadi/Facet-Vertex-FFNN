@@ -12,33 +12,6 @@ import multiprocessing
 from functools import partial
 from scipy.io import loadmat
 import numpy as np
-import types
-
-def nn_reachable_sets(filemat, p, ii ,jj, lb, ub, verify):
-    W = filemat['W'][0]
-    b = filemat['b'][0]
-    range_for_scaling = filemat['range_for_scaling'][0]
-    means_for_scaling = filemat['means_for_scaling'][0]
-
-    for i in range(5):
-        lb[i] = (lb[i] - means_for_scaling[i]) / range_for_scaling[i]
-        ub[i] = (ub[i] - means_for_scaling[i]) / range_for_scaling[i]
-
-    nnet0 = nnet.nnetwork(W, b)
-    nnet0.verification = verify
-    initial_input = cl.cubelattice(lb, ub).to_lattice()
-    cores = multiprocessing.cpu_count()
-
-    start_time = time.time()
-    outputSets = ffnn.nnet_output(nnet0, initial_input, ("parallel", cores))
-
-    elapsed_time = time.time() - start_time
-    filename = "logs/output_info_"+str(p)+"_"+str(ii)+"_"+str(jj)+".txt"
-    file = open(filename, 'w')
-    file.write('time elapsed: %f seconds \n' % elapsed_time)
-    file.write('number of polytopes: %d \n' % len(outputSets))
-    # file.write('verification result: '+ resl+'\n')
-    file.close()
 
 
 if __name__ == "__main__":
@@ -47,11 +20,8 @@ if __name__ == "__main__":
     # j = int(sys.argv[1:][2])
     p = 3
     i = 1
-    j = 7
+    j = 1
     print("Property " + str(p) + "; " + "Network: N" + str(i) + "_" + str(j))
-
-    nn_path = "nnet-mat-files/ACASXU_run2a_" + str(i) + "_" + str(j) + "_batch_2000.mat"
-    filemat = loadmat(nn_path)
 
     if p == 1:
         lb = [55947.691, -3.141592, -3.141592, 1145, 0]
@@ -94,7 +64,7 @@ if __name__ == "__main__":
 
     elif p == 4:
         lb = [1500, -0.06, 0, 1000, 700]
-        ub = [1800, 0.06, 0, 1200, 800]
+        ub = [1800, 0.06, 0.000001, 1200, 800]
 
         def verification(outputs):
             safe = True
@@ -199,5 +169,48 @@ if __name__ == "__main__":
     else:
         raise RuntimeError(f"property {p} is not defined!")
 
-    nn_reachable_sets(filemat, p, i, j, lb, ub, verify=verification)
+
+    nn_path = "nnet-mat-files/ACASXU_run2a_" + str(i) + "_" + str(j) + "_batch_2000.mat"
+    filemat = loadmat(nn_path)
+
+
+    W = filemat['W'][0]
+    b = filemat['b'][0]
+    range_for_scaling = filemat['range_for_scaling'][0]
+    means_for_scaling = filemat['means_for_scaling'][0]
+
+    for n in range(5):
+        lb[n] = (lb[n] - means_for_scaling[n]) / range_for_scaling[n]
+        ub[n] = (ub[n] - means_for_scaling[n]) / range_for_scaling[n]
+
+    nnet0 = nnet.nnetwork(W, b)
+    nnet0.verification = verification
+    initial_input = cl.cubelattice(lb, ub).to_lattice()
+    cpus = multiprocessing.cpu_count()
+    pool = multiprocessing.Pool(cpus)
+    m = multiprocessing.Manager()
+    event = m.Event()
+
+    nnet0.start_time = time.time()
+    nnet0.filename = "logs/output_info_" + str(p) + "_" + str(i) + "_" + str(j) + ".txt"
+    outputSets = []
+    nputSets0 = nnet0.singleLayerOutput(initial_input, 0)
+    nputSets = []
+    for apoly in nputSets0:
+        nputSets.extend(nnet0.singleLayerOutput(apoly, 1))
+
+    # pool.map(partial(nnet0.layerOutput, m=2), nputSets)
+    outputSets.extend(pool.imap(partial(nnet0.layerOutput, m=2), nputSets))
+    pool.close()
+    outputSets = [item for sublist in outputSets for item in sublist]
+
+    elapsed_time = time.time() - nnet0.start_time
+
+    file = open(nnet0.filename, 'w')
+    file.write('time elapsed: %f seconds \n' % elapsed_time)
+    file.write('result: safe\n')
+    file.write('outputs: %d\n' %len(outputSets))
+    # file.write('number of polytopes: %d \n' % len(outputSets))
+    # file.write('verification result: '+ resl+'\n')
+    file.close()
 

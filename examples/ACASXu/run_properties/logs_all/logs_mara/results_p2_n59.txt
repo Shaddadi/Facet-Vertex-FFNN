@@ -1,0 +1,269 @@
+Network: Marabou/resources/nnet/acasxu/ACASXU_experimental_v2a_5_9.nnet
+Number of layers: 8. Input layer size: 5. Output layer size: 5. Number of ReLUs: 300
+Total number of variables: 610
+Property: Marabou/resources/properties/property_temp2.txt
+
+Engine::processInputQuery: Input query (before preprocessing): 309 equations, 610 variables
+Engine::processInputQuery: Input query (after preprocessing): 609 equations, 897 variables
+
+Input bounds:
+	x0: [  0.6000,   0.6799] 
+	x1: [ -0.4997,   0.4997] 
+	x2: [ -0.4997,   0.4997] 
+	x3: [  0.4500,   0.5000] 
+	x4: [ -0.5000,  -0.4500] 
+
+
+Engine::solve: Initial statistics
+
+23:10:09 Statistics update:
+	--- Time Statistics ---
+	Total time elapsed: 98 milli (00:00:00)
+		Main loop: 0 milli (00:00:00)
+		Preprocessing time: 83 milli (00:00:00)
+		Unknown: 15 milli (00:00:00)
+	Breakdown for main loop:
+		[0.00%] Simplex steps: 0 milli
+		[0.00%] Explicit-basis bound tightening: 0 milli
+		[0.00%] Constraint-matrix bound tightening: 0 milli
+		[0.00%] Degradation checking: 0 milli
+		[0.00%] Precision restoration: 0 milli
+		[0.00%] Statistics handling: 0 milli
+		[0.00%] Constraint-fixing steps: 0 milli
+		[0.00%] Valid case splits: 0 milli. Average per split: 0.00 milli
+		[0.00%] Applying stored bound-tightening: 0 milli
+		[0.00%] SMT core: 0 milli
+		[0.00%] Symbolic Bound Tightening: 0 milli
+		[0.00%] Unaccounted for: 0 milli
+	--- Preprocessor Statistics ---
+	Number of preprocessor bound-tightening loop iterations: 9
+	Number of eliminated variables: 17
+	Number of constraints removed due to variable elimination: 17
+	Number of equations removed due to variable elimination: 0
+	--- Engine Statistics ---
+	Number of main loop iterations: 1
+		0 iterations were simplex steps. Total time: 0 milli. Average: 0.00 milli.
+		0 iterations were constraint-fixing steps. Total time: 0 milli. Average: 0.00 milli
+	Number of active piecewise-linear constraints: 283 / 283
+		Constraints disabled by valid splits: 0. By SMT-originated splits: 0
+	Last reported degradation: 0.0000000000. Max degradation so far: 0.0000000000. Restorations so far: 0
+	Number of simplex pivots we attempted to skip because of instability: 0.
+	Unstable pivots performed anyway: 0
+	--- Tableau Statistics ---
+	Total number of pivots performed: 0
+		Real pivots: 0. Degenerate: 0 (0.00%)
+		Degenerate pivots by request (e.g., to fix a PL constraint): 0 (0.00%)
+		Average time per pivot: 0.00 milli
+	Total number of fake pivots performed: 0
+	Total number of rows added: 0. Number of merged columns: 0
+	Current tableau dimensions: M = 609, N = 1506
+	--- SMT Core Statistics ---
+	Total depth is 0. Total visited states: 1. Number of splits: 0. Number of pops: 0
+	Max stack depth: 0
+	--- Bound Tightening Statistics ---
+	Number of tightened bounds: 0.
+		Number of rows examined by row tightener: 0. Consequent tightenings: 0
+		Number of explicit basis matrices examined by row tightener: 0. Consequent tightenings: 0
+		Number of bound tightening rounds on the entire constraint matrix: 0. Consequent tightenings: 0
+		Number of bound notifications sent to PL constraints: 0. Tightenings proposed: 0
+	--- Basis Factorization statistics ---
+	Number of basis refactorizations: 2
+	--- Projected Steepest Edge Statistics ---
+	Number of iterations: 0.
+	Number of resets to reference space: 1. Avg. iterations per reset: 0
+	--- SBT ---
+	Number of tightened bounds: 0
+
+---
+
+23:10:14 Statistics update:
+	--- Time Statistics ---
+	Total time elapsed: 5496 milli (00:00:05)
+		Main loop: 5392 milli (00:00:05)
+		Preprocessing time: 83 milli (00:00:00)
+		Unknown: 20 milli (00:00:00)
+	Breakdown for main loop:
+		[36.94%] Simplex steps: 1991 milli
+		[55.96%] Explicit-basis bound tightening: 3018 milli
+		[0.24%] Constraint-matrix bound tightening: 13 milli
+		[0.33%] Degradation checking: 18 milli
+		[0.00%] Precision restoration: 0 milli
+		[0.17%] Statistics handling: 9 milli
+		[1.78%] Constraint-fixing steps: 96 milli
+		[0.09%] Valid case splits: 4 milli. Average per split: 0.01 milli
+		[0.09%] Applying stored bound-tightening: 5 milli
+		[3.30%] SMT core: 177 milli
+		[0.46%] Symbolic Bound Tightening: 24 milli
+		[0.62%] Unaccounted for: 33 milli
+	--- Preprocessor Statistics ---
+	Number of preprocessor bound-tightening loop iterations: 9
+	Number of eliminated variables: 17
+	Number of constraints removed due to variable elimination: 17
+	Number of equations removed due to variable elimination: 0
+	--- Engine Statistics ---
+	Number of main loop iterations: 10000
+		9380 iterations were simplex steps. Total time: 1991 milli. Average: 0.21 milli.
+		584 iterations were constraint-fixing steps. Total time: 96 milli. Average: 0.16 milli
+	Number of active piecewise-linear constraints: 27 / 283
+		Constraints disabled by valid splits: 234. By SMT-originated splits: 22
+	Last reported degradation: 0.0000000000. Max degradation so far: 0.0000001447. Restorations so far: 0
+	Number of simplex pivots we attempted to skip because of instability: 11.
+	Unstable pivots performed anyway: 0
+	--- Tableau Statistics ---
+	Total number of pivots performed: 9811
+		Real pivots: 9310. Degenerate: 501 (5.11%)
+		Degenerate pivots by request (e.g., to fix a PL constraint): 494 (98.60%)
+		Average time per pivot: 0.06 milli
+	Total number of fake pivots performed: 57
+	Total number of rows added: 0. Number of merged columns: 0
+	Current tableau dimensions: M = 609, N = 1506
+	--- SMT Core Statistics ---
+	Total depth is 28. Total visited states: 37. Number of splits: 30. Number of pops: 6
+	Max stack depth: 28
+	--- Bound Tightening Statistics ---
+	Number of tightened bounds: 30742.
+		Number of rows examined by row tightener: 9317. Consequent tightenings: 453
+		Number of explicit basis matrices examined by row tightener: 113. Consequent tightenings: 7446
+		Number of bound tightening rounds on the entire constraint matrix: 5. Consequent tightenings: 915
+		Number of bound notifications sent to PL constraints: 29237. Tightenings proposed: 25121
+	--- Basis Factorization statistics ---
+	Number of basis refactorizations: 108
+	--- Projected Steepest Edge Statistics ---
+	Number of iterations: 9385.
+	Number of resets to reference space: 14. Avg. iterations per reset: 670
+	--- SBT ---
+	Number of tightened bounds: 21015
+
+23:10:21 Statistics update:
+	--- Time Statistics ---
+	Total time elapsed: 11834 milli (00:00:11)
+		Main loop: 11726 milli (00:00:11)
+		Preprocessing time: 83 milli (00:00:00)
+		Unknown: 25 milli (00:00:00)
+	Breakdown for main loop:
+		[37.83%] Simplex steps: 4435 milli
+		[57.03%] Explicit-basis bound tightening: 6687 milli
+		[0.22%] Constraint-matrix bound tightening: 25 milli
+		[0.31%] Degradation checking: 36 milli
+		[0.00%] Precision restoration: 0 milli
+		[0.16%] Statistics handling: 18 milli
+		[1.19%] Constraint-fixing steps: 140 milli
+		[0.09%] Valid case splits: 9 milli. Average per split: 0.01 milli
+		[0.10%] Applying stored bound-tightening: 11 milli
+		[2.34%] SMT core: 274 milli
+		[0.39%] Symbolic Bound Tightening: 45 milli
+		[0.34%] Unaccounted for: 40 milli
+	--- Preprocessor Statistics ---
+	Number of preprocessor bound-tightening loop iterations: 9
+	Number of eliminated variables: 17
+	Number of constraints removed due to variable elimination: 17
+	Number of equations removed due to variable elimination: 0
+	--- Engine Statistics ---
+	Number of main loop iterations: 20000
+		19086 iterations were simplex steps. Total time: 4435 milli. Average: 0.23 milli.
+		857 iterations were constraint-fixing steps. Total time: 140 milli. Average: 0.16 milli
+	Number of active piecewise-linear constraints: 91 / 283
+		Constraints disabled by valid splits: 176. By SMT-originated splits: 16
+	Last reported degradation: 0.0000000000. Max degradation so far: 0.0000001447. Restorations so far: 0
+	Number of simplex pivots we attempted to skip because of instability: 39.
+	Unstable pivots performed anyway: 0
+	--- Tableau Statistics ---
+	Total number of pivots performed: 19618
+		Real pivots: 18917. Degenerate: 701 (3.57%)
+		Degenerate pivots by request (e.g., to fix a PL constraint): 671 (95.72%)
+		Average time per pivot: 0.07 milli
+	Total number of fake pivots performed: 121
+	Total number of rows added: 0. Number of merged columns: 0
+	Current tableau dimensions: M = 609, N = 1506
+	--- SMT Core Statistics ---
+	Total depth is 20. Total visited states: 62. Number of splits: 39. Number of pops: 22
+	Max stack depth: 30
+	--- Bound Tightening Statistics ---
+	Number of tightened bounds: 55189.
+		Number of rows examined by row tightener: 18947. Consequent tightenings: 1101
+		Number of explicit basis matrices examined by row tightener: 229. Consequent tightenings: 18088
+		Number of bound tightening rounds on the entire constraint matrix: 9. Consequent tightenings: 2388
+		Number of bound notifications sent to PL constraints: 52072. Tightenings proposed: 27129
+	--- Basis Factorization statistics ---
+	Number of basis refactorizations: 208
+	--- Projected Steepest Edge Statistics ---
+	Number of iterations: 19107.
+	Number of resets to reference space: 37. Avg. iterations per reset: 516
+	--- SBT ---
+	Number of tightened bounds: 32326
+Before declaring sat, recomputing...
+
+Engine::solve: sat assignment found
+
+23:10:24 Statistics update:
+	--- Time Statistics ---
+	Total time elapsed: 15257 milli (00:00:15)
+		Main loop: 15145 milli (00:00:15)
+		Preprocessing time: 83 milli (00:00:00)
+		Unknown: 28 milli (00:00:00)
+	Breakdown for main loop:
+		[38.01%] Simplex steps: 5757 milli
+		[57.01%] Explicit-basis bound tightening: 8634 milli
+		[0.17%] Constraint-matrix bound tightening: 25 milli
+		[0.31%] Degradation checking: 47 milli
+		[0.00%] Precision restoration: 0 milli
+		[0.16%] Statistics handling: 24 milli
+		[1.12%] Constraint-fixing steps: 170 milli
+		[0.09%] Valid case splits: 13 milli. Average per split: 0.01 milli
+		[0.09%] Applying stored bound-tightening: 14 milli
+		[2.16%] SMT core: 327 milli
+		[0.38%] Symbolic Bound Tightening: 57 milli
+		[0.48%] Unaccounted for: 72 milli
+	--- Preprocessor Statistics ---
+	Number of preprocessor bound-tightening loop iterations: 9
+	Number of eliminated variables: 17
+	Number of constraints removed due to variable elimination: 17
+	Number of equations removed due to variable elimination: 0
+	--- Engine Statistics ---
+	Number of main loop iterations: 25723
+		24608 iterations were simplex steps. Total time: 5757 milli. Average: 0.23 milli.
+		1045 iterations were constraint-fixing steps. Total time: 170 milli. Average: 0.16 milli
+	Number of active piecewise-linear constraints: 18 / 283
+		Constraints disabled by valid splits: 245. By SMT-originated splits: 20
+	Last reported degradation: 0.0000000000. Max degradation so far: 0.0000001447. Restorations so far: 0
+	Number of simplex pivots we attempted to skip because of instability: 42.
+	Unstable pivots performed anyway: 0
+	--- Tableau Statistics ---
+	Total number of pivots performed: 25229
+		Real pivots: 24408. Degenerate: 821 (3.25%)
+		Degenerate pivots by request (e.g., to fix a PL constraint): 785 (95.62%)
+		Average time per pivot: 0.07 milli
+	Total number of fake pivots performed: 143
+	Total number of rows added: 0. Number of merged columns: 0
+	Current tableau dimensions: M = 609, N = 1506
+	--- SMT Core Statistics ---
+	Total depth is 25. Total visited states: 75. Number of splits: 48. Number of pops: 26
+	Max stack depth: 30
+	--- Bound Tightening Statistics ---
+	Number of tightened bounds: 68411.
+		Number of rows examined by row tightener: 24444. Consequent tightenings: 1396
+		Number of explicit basis matrices examined by row tightener: 294. Consequent tightenings: 23394
+		Number of bound tightening rounds on the entire constraint matrix: 9. Consequent tightenings: 2388
+		Number of bound notifications sent to PL constraints: 64524. Tightenings proposed: 27979
+	--- Basis Factorization statistics ---
+	Number of basis refactorizations: 266
+	--- Projected Steepest Edge Statistics ---
+	Number of iterations: 24629.
+	Number of resets to reference space: 44. Avg. iterations per reset: 559
+	--- SBT ---
+	Number of tightened bounds: 39891
+sat
+Input assignment:
+	x0 = 0.639929
+	x1 = -0.003623
+	x2 = -0.204887
+	x3 = 0.470348
+	x4 = -0.500000
+
+Output:
+	y0 = 0.032954
+	y1 = 0.020508
+	y2 = -0.018590
+	y3 = 0.022357
+	y4 = -0.018001
+

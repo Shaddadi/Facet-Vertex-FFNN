@@ -1,0 +1,16 @@
+Using settings profile: 'multibfs'. Override num process: None
+input ub: [-0.29855281193475053, 0.009549296585513092, 0.0, 0.5, 0.16666666666666666]
+input lb: [-0.30353115613746867, -0.009549296585513092, 0.0, 0.3181818181818182, 0.08333333333333333]
+Running in parallel with 20 processes
+(0.0 sec) Q: 0, Sets: 0/1  (0.0%) ETA: - (expected 1 stars)   
+(0.1 sec) Q: 3, Sets: 196/210  (51.398%) ETA: 0.1 sec (expected 381 stars)   
+(0.2 sec) Q: 0, Sets: 495/496  (98.438%) ETA: 0.0 sec (expected 503 stars)   
+
+Total Stars: 542
+Runtime: 0.2 sec
+Completed work frac: 1.0
+Num Stars Copied Between Processes: 29
+Num Lps During Enumeration: 3778
+Total Num Lps: 4814
+
+Result: network is SAFE

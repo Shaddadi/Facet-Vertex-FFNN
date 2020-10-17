@@ -1,2 +1,3 @@
-time elapsed: 4.299909 seconds 
-number of polytopes: 71930 
+time elapsed: 6.272323 seconds 
+result: safe
+outputs: 71930

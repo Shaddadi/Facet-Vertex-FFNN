@@ -1,0 +1,3 @@
+time elapsed: 0.120964 seconds 
+result: safe
+outputs: 1229
