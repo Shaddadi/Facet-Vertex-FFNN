@@ -2,6 +2,17 @@ import numpy as np
 import pickle
 import matplotlib.pyplot as plot
 
+def get_data_eran(eran):
+    file1 = open(eran,'r')
+    lines = file1.readlines()
+    val = float(lines[-2][1:5])
+    rel = lines[-3][18]
+    if rel == 'V':
+        rell = 'UNSAT'
+        return [val, rell]
+    else:
+        return []
+
 # logs_facetv: facet-vertex
 def get_data_facetv(facetv):
     file1 = open(facetv, "r")
@@ -125,6 +136,7 @@ if __name__ == "__main__":
     time_reluval = []
     time_reluval_2h = []
     time_bakcav = []
+    time_eran = []
     for p in range(1,5):
         for n1 in range(1,6):
             for n2 in range(1,10):
@@ -132,6 +144,7 @@ if __name__ == "__main__":
                 mara = 'logs_mara/results_' + 'p' + str(p) + '_' + 'n'+str(n1) + str(n2) + '.txt'
                 reluval = 'logs_reluval/results_' + 'p' + str(p) + '_' + 'n' + str(n1) + str(n2) + '.txt'
                 reluval_2h = 'logs_reluval_2h/results_' + 'p' + str(p) + '_' + 'n' + str(n1) + str(n2) + '.txt'
+                eran = 'logs_eran/results_' + 'p' + str(p) + '_' + 'n' + str(n1) + str(n2) + '.txt'
                 # reluval_depth25 = 'logs_reluval_depth45/results_' + 'p' + str(p) + '_' + 'n' + str(n1) + str(n2) + '.txt'
                 bakcav = 'logs_bakcav/output_info_' + str(p) + '_' + str(n1) + '_' + str(n2) + '.txt'
                 time_facetv.append(get_data_facetv(facetv)[0])
@@ -139,12 +152,15 @@ if __name__ == "__main__":
                 time_reluval.append(get_data_reluval(reluval)[0])
                 time_reluval_2h.append(get_data_reluval(reluval_2h)[0])
                 time_bakcav.append(get_data_bakcav(bakcav)[0])
+                if get_data_eran(eran):
+                    time_eran.append(get_data_eran(eran)[0])
 
     time_facetv = np.array(time_facetv)
     time_mara = np.array(time_mara)
     time_reluval = np.array(time_reluval)
     time_reluval_2h = np.array(time_reluval_2h)
     time_bakcav = np.array(time_bakcav)
+    time_eran = np.array(time_eran)
     x = np.arange(1,181)
 
     # plot.semilogy(x, np.sort(time_facetv), x, np.sort(time_mara), x, np.sort(time_mara), x, np.sort(time_bakcav))
@@ -156,4 +172,4 @@ if __name__ == "__main__":
     # plot.show()
 
     with open('times.pkl', 'wb') as f:
-        pickle.dump([time_facetv, time_mara, time_reluval, time_bakcav, time_reluval_2h], f)
+        pickle.dump([time_facetv, time_mara, time_reluval, time_bakcav, time_reluval_2h, time_eran], f)

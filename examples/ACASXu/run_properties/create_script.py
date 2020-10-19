@@ -1,5 +1,5 @@
 import sys
-P = range(4,5)
+P = range(1,5)
 N2 = range(1,10)
 N1 = range(1,6)
 filename = 'script.sh'

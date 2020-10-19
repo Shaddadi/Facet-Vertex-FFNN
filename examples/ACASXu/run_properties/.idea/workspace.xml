@@ -20,21 +20,401 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd8e675-35ba-488c-b5ee-6cd2a161c03b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/create_script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs_all/load_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../MNIST/load_nnet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../class/FFNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../class/FFNN.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../MNIST/logs_all_netx4/.idea/logs_all.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../class/cubelattice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../class/cubelattice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../class/nnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../class/nnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../class/vertex_facet_lattice.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../class/vertex_facet_lattice.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_1_2_5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_1_4_9.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_3_1_1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_3_1_2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_3_1_3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_3_1_4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/output_info_3_1_7.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_script.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/output_info_3_1_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/output_info_3_1_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/display_data.m" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/display_data.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_1_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_2_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_3_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_4_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_1_5_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_1_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_2_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_3_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_4_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_2_5_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_1_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_2_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_3_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_4_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_3_5_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_1_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_2_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_3_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_4_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_7.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/logs_facetv/output_info_4_5_9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs_all/times.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/logs_all/times.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_property34.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run_property34.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/script.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result1" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result10" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result100" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result100" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result11" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result12" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result13" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result13" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result14" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result14" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result15" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result16" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result17" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result17" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result18" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result18" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result19" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result19" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result2" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result20" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result20" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result21" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result21" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result22" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result22" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result23" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result23" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result24" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result24" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result25" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result25" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result26" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result27" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result28" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result28" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result29" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result29" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result3" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result30" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result30" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result31" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result31" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result32" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result33" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result33" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result34" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result34" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result35" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result35" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result36" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result36" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result37" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result37" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result38" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result38" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result39" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result39" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result4" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result40" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result40" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result41" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result41" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result42" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result42" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result43" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result43" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result44" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result44" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result45" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result45" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result46" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result46" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result47" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result47" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result48" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result48" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result49" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result49" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result5" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result50" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result50" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result51" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result51" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result52" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result52" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result53" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result53" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result54" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result54" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result55" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result55" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result56" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result56" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result57" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result57" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result58" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result58" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result59" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result59" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result6" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result60" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result60" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result61" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result61" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result62" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result62" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result63" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result63" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result64" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result64" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result65" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result65" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result66" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result66" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result67" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result67" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result68" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result68" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result69" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result69" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result7" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result70" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result70" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result71" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result71" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result72" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result72" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result73" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result73" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result74" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result74" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result75" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result75" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result76" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result76" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result77" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result77" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result78" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result78" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result79" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result79" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result8" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result80" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result80" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result81" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result81" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result82" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result82" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result83" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result83" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result84" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result84" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result85" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result85" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result86" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result86" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result87" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result87" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result88" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result88" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result89" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result89" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result9" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result90" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result90" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result91" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result91" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result92" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result92" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result93" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result93" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result94" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result94" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result95" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result95" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result96" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result96" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result97" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result97" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result98" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result98" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/logs/result99" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/logs/result99" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image100" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/image99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/my_images/labels" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MNIST/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../MNIST/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +446,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/logs_all" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.python" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySupportGeventDebugging" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -88,6 +471,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_script.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="load_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="run_properties" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logs_all" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logs_all/load_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -120,6 +524,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.load_data" />
         <item itemvalue="Python.create_script" />
       </list>
     </recent_temporary>
@@ -151,46 +556,46 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="766" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1602887335881">
+    <state x="766" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603078327764">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="766" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1602887335881" />
-    <state width="1830" height="192" key="GridCell.Tab.0.bottom" timestamp="1602795217318">
+    <state x="766" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1603078327764" />
+    <state width="1830" height="387" key="GridCell.Tab.0.bottom" timestamp="1603120193380">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="192" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217318" />
-    <state width="1830" height="192" key="GridCell.Tab.0.center" timestamp="1602795217318">
+    <state width="1830" height="387" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1603120193380" />
+    <state width="1830" height="387" key="GridCell.Tab.0.center" timestamp="1603120193379">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="192" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217318" />
-    <state width="1830" height="192" key="GridCell.Tab.0.left" timestamp="1602795217317">
+    <state width="1830" height="387" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1603120193379" />
+    <state width="1830" height="387" key="GridCell.Tab.0.left" timestamp="1603120193379">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="192" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217317" />
-    <state width="1830" height="192" key="GridCell.Tab.0.right" timestamp="1602795217318">
+    <state width="1830" height="387" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1603120193379" />
+    <state width="1830" height="387" key="GridCell.Tab.0.right" timestamp="1603120193379">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="192" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217318" />
-    <state width="1830" height="454" key="GridCell.Tab.1.bottom" timestamp="1602795217315">
+    <state width="1830" height="387" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1603120193379" />
+    <state width="1830" height="299" key="GridCell.Tab.1.bottom" timestamp="1603119887431">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="454" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217315" />
-    <state width="1830" height="454" key="GridCell.Tab.1.center" timestamp="1602795217315">
+    <state width="1830" height="299" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1603119887431" />
+    <state width="1830" height="299" key="GridCell.Tab.1.center" timestamp="1603119887431">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="454" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217315" />
-    <state width="1830" height="454" key="GridCell.Tab.1.left" timestamp="1602795217314">
+    <state width="1830" height="299" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1603119887431" />
+    <state width="1830" height="299" key="GridCell.Tab.1.left" timestamp="1603119887431">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="454" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217314" />
-    <state width="1830" height="454" key="GridCell.Tab.1.right" timestamp="1602795217315">
+    <state width="1830" height="299" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1603119887431" />
+    <state width="1830" height="299" key="GridCell.Tab.1.right" timestamp="1603119887431">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1830" height="454" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1602795217315" />
-    <state x="482" y="187" key="SettingsEditor" timestamp="1602370791188">
+    <state width="1830" height="299" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1603119887431" />
+    <state x="511" y="184" key="SettingsEditor" timestamp="1603118985993">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1602370791188" />
+    <state x="511" y="184" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1603118985993" />
     <state x="599" y="166" width="778" height="773" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602698731504">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -214,24 +619,19 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../../../class/nnet.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="62" />
+          <url>file://$PROJECT_DIR$/../../../class/vertex_facet_lattice.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../../../class/nnet.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="63" />
+          <line>127</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>202</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="69" />
+          <url>file://$PROJECT_DIR$/../../../class/nnet.py</url>
+          <line>126</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

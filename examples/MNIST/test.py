@@ -66,17 +66,18 @@ for i in range(top2.shape[1]):
     diff = correct_outputs[t1, i]- correct_outputs[t2,i]
     diffs.append(diff)
 
-diffs_indx = np.argsort(np.array(diffs))[50:150]
+diffs_indx = np.argsort(np.array(diffs))[0:100]
 selected_correct_ims = correct_ims[diffs_indx]
 selected_correct_label = correct_label[diffs_indx]
 selected_correct_outputs = correct_outputs[:, diffs_indx]
 for n in range(len(selected_correct_label)):
     xx = evaluate_nnet(aNNet, cp.copy(selected_correct_ims[[0]].T))
     image = selected_correct_ims[n].tolist()
-    with open('my_images/image'+str(n+1), 'w') as f:
+    with open('my_images_netx4/image'+str(n+1), 'w') as f:
         for item in image:
             f.write("%d," % int(item*255))
 
-    with open('my_images/labels', 'a') as f:
-        f.write("%d," %selected_correct_label[n])
+with open('my_images_netx4/labels', 'w') as f:
+    for val in selected_correct_label:
+        f.write("%d," %val)
 

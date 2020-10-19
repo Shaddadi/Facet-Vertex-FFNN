@@ -15,13 +15,15 @@ class cubelattice:
         self.dim = len(lb)
         self.lb = lb
         self.ub = ub
+        self.M = np.eye(len(lb))
+        self.b = np.zeros((len(lb),1))
         self.bs = np.array([lb,ub]).T
 
         self.vertices = self.compute_vertex(self.lb, self.ub)
         self.compute_lattice() # compute self.lattice
 
     def to_lattice(self): 
-        return vfl.VFL(self.lattice, self.vertices, self.vertices, self.dim)
+        return vfl.VFL(self.lattice, self.vertices, self.vertices, self.dim, self.M, self.b)
 
     def compute_lattice(self):
         vertex_facets = []

@@ -30,7 +30,7 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                vs = afv.vertices
+                vs = np.dot(afv.vertices, afv.M.T)+afv.b.T
                 if np.any(vs[0, :] >= 3.9911):
                     safe = False
                     break
@@ -43,7 +43,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmax(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmax(vertices, axis=1)
                 if np.any(indx == 0):
                     safe = False
                     break
@@ -56,7 +57,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx == 0):
                     safe = False
                     break
@@ -69,7 +71,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx == 0):
                     safe = False
                     break
@@ -82,7 +85,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx != 4):
                     safe = False
                     break
@@ -95,7 +99,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx != 0):
                     safe = False
                     break
@@ -108,7 +113,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx != 0):
                     safe = False
                     break
@@ -121,7 +127,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx == 3) or np.any(indx == 4):
                     safe = False
                     break
@@ -134,7 +141,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if (2 in indx) or (3 in indx) or (4 in indx):
                     safe = False
                     break
@@ -147,7 +155,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx != 3):
                     safe = False
                     break
@@ -160,7 +169,8 @@ if __name__ == "__main__":
         def verification(outputs):
             safe = True
             for afv in outputs:
-                indx = np.argmin(afv.vertices, axis=1)
+                vertices = np.dot(afv.vertices, afv.M.T) + afv.b.T
+                indx = np.argmin(vertices, axis=1)
                 if np.any(indx != 0):
                     safe = False
                     break
@@ -193,6 +203,9 @@ if __name__ == "__main__":
 
     nnet0.start_time = time.time()
     nnet0.filename = "logs/output_info_" + str(p) + "_" + str(i) + "_" + str(j) + ".txt"
+
+    # outputSets = nnet0.layerOutput(initial_input, 0)
+
     outputSets = []
     nputSets0 = nnet0.singleLayerOutput(initial_input, 0)
     nputSets = []

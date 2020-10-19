@@ -18,22 +18,33 @@ class nnetwork:
         self.numLayer = len(W)
         self.start_time = 0
         self.filename = ''
+        self.test_time = 0
+        self.facetv_time0 = 0
+        self.facetv_time1 = 0
 
     def verification(self):
         print('Designed to be replaced')
 
     # nn output of input starting from mth layer
     def layerOutput(self, inputPoly, m):
-        # print('Layer: ',m)
+        # print('Layer: %d\n'%m)
 
         inputSets = [inputPoly]
         for i in range(m, self.numLayer):
             inputSets_len = len(inputSets)
             n = 0
+            time0 = time.time()
+            self.test_time = 0
             while n < inputSets_len:
                 aPoly = inputSets.pop(0)
                 n += 1
                 inputSets.extend(self.singleLayerOutput(aPoly, i))
+            # print('num: ', len(inputSets))
+            # print('time: ', time.time()-time0)
+            # print('find_neruon time: ', self.test_time)
+            # print('facetv_time0: ', self.facetv_time0)
+            # print('facetv_time1: ', self.facetv_time1)
+
 
         verify_result = self.verification(inputSets)
         if not verify_result:
@@ -72,7 +83,8 @@ class nnetwork:
         # inputPoly = shared_inputSets[inputSets_index]
         W = self.W[layerID]
         b = self.b[layerID]
-        inputPoly.vertices = (np.dot(W, inputPoly.vertices.T) + b).T
+        # inputPoly.vertices = (np.dot(W, inputPoly.vertices.T) + b).T
+        inputPoly.linearTrans(W, b)
 
         # partition graph sets according to properties of the relu function
         if layerID == self.numLayer-1:
@@ -95,6 +107,11 @@ class nnetwork:
 
         sub0, sub1= inputPoly.single_split_relu(idx)
 
+        # self.facetv_time0 += sub0.time0
+        # sub0.time0 = 0
+        # self.facetv_time1 += sub0.time1
+        # sub0.time1 = 0
+
         if sub0:
             outputPolySets.append(sub0)
         if sub1:
@@ -106,9 +123,11 @@ class nnetwork:
         if (neurons.shape[0] == 0) and flag:
             return [im_fl]
 
+        t0 =time.time()
         new_neurons, new_neurons_neg = self.get_valid_neurons(im_fl, neurons)
+        self.test_time = self.test_time + time.time() - t0
 
-        im_fl.vertices[:,new_neurons_neg] = 0.0
+        im_fl.map_negative_poly(new_neurons_neg)
 
         if new_neurons.shape[0] == 0:
             return [im_fl]
@@ -125,15 +144,16 @@ class nnetwork:
 
     def get_valid_neurons(self, afl, neurons):
         if neurons.shape[0] ==0:
-            flag_neg = afl.vertices<=0
+            vertices = np.dot(afl.vertices, afl.M.T) + afl.b.T
+            flag_neg = vertices<=0
             temp_neg = np.all(flag_neg, 0)
             valid_neurons_neg = np.asarray(np.nonzero(temp_neg)).T[:,0]
-            temp_pos = np.all(afl.vertices>=0, 0)
+            temp_pos = np.all(vertices>=0, 0)
             neurons_sum = temp_neg+temp_pos
             valid_neurons_neg_pos = np.asarray(np.nonzero(neurons_sum==False)).T[:,0]
             return valid_neurons_neg_pos, valid_neurons_neg
 
-        elements = afl.vertices[:, neurons]
+        elements = np.dot(afl.vertices,afl.M[neurons,:].T)+afl.b[neurons,:].T
         flag_neg = (elements <= 0)
         temp_neg = np.all(flag_neg, 0)
         temp_pos = np.all(elements>=0, 0)
