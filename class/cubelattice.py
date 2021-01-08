@@ -4,7 +4,6 @@ import torch
 import numpy as np
 import operator as op
 from functools import reduce
-import reference as rf
 import vertex_facet_lattice as vfl
 import collections as cln
 import time
@@ -23,7 +22,7 @@ class cubelattice:
         self.compute_lattice() # compute self.lattice
 
     def to_lattice(self): 
-        return vfl.VFL(self.lattice, self.vertices, self.vertices, self.dim, self.M, self.b)
+        return vfl.VFL(self.lattice, self.vertices, self.dim, self.M, self.b)
 
     def compute_lattice(self):
         vertex_facets = []

@@ -2,12 +2,10 @@ import numpy as np
 import time
 import os
 import sys
-import psutil
-import pickle
 import multiprocessing
-from functools import partial
 from multiprocessing import get_context
-
+from multiprocessing import Process, Queue
+from random import shuffle
 
 class nnetwork:
 
@@ -25,38 +23,23 @@ class nnetwork:
     def verification(self):
         print('Designed to be replaced')
 
-    # nn output of input starting from mth layer
     def layerOutput(self, inputPoly, m):
         # print('Layer: %d\n'%m)
-
         inputSets = [inputPoly]
         for i in range(m, self.numLayer):
-            inputSets_len = len(inputSets)
-            n = 0
-            time0 = time.time()
-            self.test_time = 0
-            while n < inputSets_len:
-                aPoly = inputSets.pop(0)
-                n += 1
-                inputSets.extend(self.singleLayerOutput(aPoly, i))
-            # print('num: ', len(inputSets))
-            # print('time: ', time.time()-time0)
-            # print('find_neruon time: ', self.test_time)
-            # print('facetv_time0: ', self.facetv_time0)
-            # print('facetv_time1: ', self.facetv_time1)
+            output = Queue()
+            processes = []
+            for aPoly in inputSets:
+                processes.append(Process(target=self.singleLayerOutput, args=(aPoly, i, output)))
 
+            for p in processes:
+                p.start()
+            for p in processes:
+                p.join()
 
-        verify_result = self.verification(inputSets)
-        if not verify_result:
-            print('unsafe')
-            file = open(self.filename, 'w')
-            file.write('time elapsed: %f seconds \n' % (time.time()-self.start_time))
-            file.write('result: unsafe')
-            file.close()
-            os.system('pkill -9 python')
+            inputSets = [output.get() for p in processes]
 
         return inputSets
-
 
     # point output of nn
     def outputPoint(self, inputPoint):
@@ -79,38 +62,47 @@ class nnetwork:
 
     # polytope output of single layer
     def singleLayerOutput(self, inputPoly, layerID):
-        # print("layer", layerID)
-        # inputPoly = shared_inputSets[inputSets_index]
+
         W = self.W[layerID]
         b = self.b[layerID]
-        # inputPoly.vertices = (np.dot(W, inputPoly.vertices.T) + b).T
         inputPoly.linearTrans(W, b)
 
-        # partition graph sets according to properties of the relu function
-        if layerID == self.numLayer-1:
-                inputPoly.lattice = []
-                return [inputPoly]
+        if layerID == self.numLayer - 1:
+            inputPoly.lattice = []
+            verify_result = self.verification(inputPoly)
+            if not verify_result:
+                if not os.path.isfile(self.filename):
+                    print('Time elapsed: %f seconds' % (time.time()-self.start_time))
+                    print('Result: unsafe \n')
+                    file = open(self.filename, 'w')
+                    file.write('time elapsed: %f seconds \n' % (time.time()-self.start_time))
+                    file.write('result: unsafe')
+                    file.close()
 
-        polys = [inputPoly]
+                    os.system('pkill -9 python')
 
-        splited_polys = []
-        for aPoly in polys:
-            splited_polys.extend(self.relu_layer(aPoly, np.array([]), flag=False))
-        polys = splited_polys
+            return
 
-        return polys
+        polys = self.relu_layer(inputPoly, np.array([]), flag=False)
+        shuffle(polys)
+        if layerID <1:
+            processes = []
+            for aPoly in polys:
+                processes.append(Process(target=self.singleLayerOutput, args=(aPoly, layerID+1)))
 
+            for p in processes:
+                p.start()
+            for p in processes:
+                p.join()
+        else:
+            for aPoly in polys:
+                self.singleLayerOutput(aPoly, layerID + 1)
 
     # partition one input polytope with a hyberplane
     def splitPoly(self, inputPoly, idx):
         outputPolySets = []
 
         sub0, sub1= inputPoly.single_split_relu(idx)
-
-        # self.facetv_time0 += sub0.time0
-        # sub0.time0 = 0
-        # self.facetv_time1 += sub0.time1
-        # sub0.time1 = 0
 
         if sub0:
             outputPolySets.append(sub0)

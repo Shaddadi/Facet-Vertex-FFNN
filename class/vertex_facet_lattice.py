@@ -7,10 +7,9 @@ import numpy as np
 import collections as cln
 
 class VFL:
-    def __init__(self, lattice, vertices, vertices_init, dim, M, b):
+    def __init__(self, lattice, vertices, dim, M, b):
         self.lattice = lattice
         self.vertices = vertices
-        self.vertices_init = vertices_init
         self.dim = dim
         self.M = M
         self.b = b
@@ -44,7 +43,6 @@ class VFL:
         return self
 
     def single_split_relu(self, idx):
-
         elements = np.dot(self.vertices, self.M[idx,:].T)+self.b[idx,:].T
         if np.any(elements==0.0):
             sys.exit('Hyperplane intersect with vertices!')
@@ -67,21 +65,17 @@ class VFL:
         vs_facets1 = self.lattice[more_bool]
         vertices0 = self.vertices[less_bool]
         vertices1 = self.vertices[more_bool]
-        vertices_init0 = self.vertices_init[less_bool]
-        vertices_init1 = self.vertices_init[more_bool]
         elements0 = elements[less_bool]
         elements1 = elements[more_bool]
 
         # t0 = time.time()
-        edges = np.dot(vs_facets0.astype(int), vs_facets1.T.astype(int))
+        edges = np.dot(vs_facets0.astype(np.float32), vs_facets1.T.astype(np.float32))
         edges_indx = np.array(np.nonzero(edges == self.dim - 1))
         indx0, indx1 = edges_indx[0], edges_indx[1]
         p0s, p1s = vertices0[indx0], vertices1[indx1]
-        p_init0, p_init1s = vertices_init0[indx0], vertices_init1[indx1]
         elem0, elem1s = elements0[indx0], elements1[indx1]
         alpha = abs(elem0) / (abs(elem0) + abs(elem1s))
         new_vs = p0s + ((p1s - p0s).T * alpha).T
-        new_vs_init = p_init0 + ((p_init1s - p_init0).T * alpha).T
         new_vs_facets = np.logical_and(vs_facets0[indx0], vs_facets1[indx1])
 
         # self.time0 = time.time() - t0
@@ -92,8 +86,7 @@ class VFL:
         vs_facets_hp[-len(new_vs):,0] = True # add hyperplane
         sub_vs_facets0 = np.concatenate((sub_vs_facets0, vs_facets_hp), axis=1)
         new_vertices0 = np.concatenate((vertices0, new_vs))
-        new_vertices_init0 = np.concatenate((vertices_init0, new_vs_init))
-        subset0 = VFL(sub_vs_facets0, new_vertices0, new_vertices_init0, self.dim, cp.copy(self.M), cp.copy(self.b))
+        subset0 = VFL(sub_vs_facets0, new_vertices0, self.dim, cp.copy(self.M), cp.copy(self.b))
         if flg == 1:
             subset0.map_negative_poly(idx)
 
@@ -103,8 +96,7 @@ class VFL:
         vs_facets_hp[-len(new_vs):,0] = True # add hyperplane
         sub_vs_facets1 = np.concatenate((sub_vs_facets1, vs_facets_hp), axis=1)
         new_vertices1 = np.concatenate((vertices1, new_vs))
-        new_vertices_init1 = np.concatenate((vertices_init1, new_vs_init))
-        subset1 = VFL(sub_vs_facets1, new_vertices1, new_vertices_init1, self.dim, cp.copy(self.M), cp.copy(self.b))
+        subset1 = VFL(sub_vs_facets1, new_vertices1, self.dim, cp.copy(self.M), cp.copy(self.b))
         if flg == -1:
             subset1.map_negative_poly(idx)
 
