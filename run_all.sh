@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pip3 install filelock
-
 cd examples/ACASXu
 sudo chmod +x property1-4.sh
 sudo chmod +x property5-10.sh
