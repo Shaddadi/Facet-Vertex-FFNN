@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is for the *Reachability Analysis of Deep ReLU Neural Networks using Facet-Vertex Incidence*
+This repository is for the *Reachability Analysis of Deep ReLU Neural Networks using Facet-Vertex Incidence*. The 64GB RAM is recommended to generate all the results.
 
 ## Checked Environment
 
@@ -11,6 +11,7 @@ Software
 ```txt
 Ubunu 18.04
 Python 3.6
+Matlab 2019b
 ```
 
 Hardware
@@ -25,22 +26,36 @@ Memory: 128GB
 All dependencies are included
 
 ## Implementation
+To reproduce all the results, run
+```bash
+sudo chmod +x run_all.sh
+./run_all.sh
+```
+It will generate the result of our method in Table 1, Table2, Figure3 and Figure4.
 
+### ACASXu
 ```bash
 cd examples/ACASXu
-python3 main.py <index of the property(int)> <first index of the network(int)> <second index of the network(int)> 
+python3 main.py --property <index of the property> --n1 <first index of the network> --n2 <second index of the network> --compute_unsafety <action>
 ```
-
-For instance, Property 1 on the Network2_3 can be tested with
+For instance, Property 2 on the Network1_2 can be tested with
 
 ```bash
-python3 main.py 1 2 3
+ python3 main.py --property 2 --n1 1 --n2 2
+```
+The unsafe input domain of Property 2 on the Network1_2 can be computed with
+```bash
+ python3 main.py --property 2 --n1 1 --n2 2 --compute_unsafety
 ```
 
-## Reproduce the verification of Property 3&4 on all 45 networks (~20 seconds)
+
+### Microbenchmarks
+```bash
+cd examples/Microbenchmarks
+python3 main.py --n1 <first index of the network> --n2 <second index of the network> 
+```
+For instance, Network2_3 can be tested with
 
 ```bash
-cd examples/ACASXu
-sudo chmod +x run_property34.sh
-./run_property34.sh
-```
+ python3 main.py --n1 2 --n2 3
+ ```
