@@ -5,7 +5,7 @@
 This repository is for the *Reachability Analysis of Deep ReLU Neural Networks using Facet-Vertex Incidence*. 
 
 **Caution:**
-The 64GB RAM is recommended to generate all the results.
+A 64GB RAM is recommended to generate all the results.
 
 ## Checked Environment
 
