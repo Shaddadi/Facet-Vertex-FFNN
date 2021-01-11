@@ -26,12 +26,12 @@ Memory: 128GB
 All dependencies are included
 
 ## Implementation
-To reproduce all the results, run
+To reproduce all the results(~1 hour), run
 ```bash
 sudo chmod +x run_all.sh
 ./run_all.sh
 ```
-It will generate the result of our method in Table 1, Table2, Figure3 and Figure4.
+It will generate the result of our method in Table 1, Table 2, Figure 3 and Figure 4.
 
 ### ACASXu
 ```bash
