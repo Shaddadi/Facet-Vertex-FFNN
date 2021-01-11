@@ -31,7 +31,7 @@ To reproduce all the results(~1 hour), run
 sudo chmod +x run_all.sh
 ./run_all.sh
 ```
-It will generate the result of our method in Table 1, Table 2, Figure 3 and Figure 4.
+It will generate the result of our method in Table 1, Table 2, Figure 3 and Figure 4 in the paper
 
 ### ACASXu
 ```bash
