@@ -3,6 +3,9 @@
 pip3 install filelock
 
 cd examples/ACASXu
+sudo chmod +x property1-4.sh
+sudo chmod +x property5-10.sh
+sudo chmod +x property2_N12.sh
 ./property1-4.sh
 ./property5-10.sh
 ./property2_N12.sh
@@ -14,6 +17,7 @@ cp ./Table1.txt ../../
 cd ../../
 
 cd examples/Microbenchmarks
+sudo chmod +x microbenchmarks.sh
 ./microbenchmarks.sh
 python3 load_results.py
 cp ./Table2.txt ../../
