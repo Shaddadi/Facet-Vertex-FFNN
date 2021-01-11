@@ -1,16 +1,0 @@
-running property 2 with network ./ReluVal/nnet/ACASXU_run2a_5_8_batch_2000.nnet
-input ranges:
-[0.679858 0.500000 0.500000 0.500000 -0.450000 ]
-[0.600000 -0.500000 -0.500000 0.450000 -0.500000 ]
-check mode: NORMAL_CHECK_MODE
-progress: [=                                                 ] 0.10%progress: [=                                                 ] 0.20%progress: [=                                                 ] 0.29%progress: [=                                                 ] 0.39%progress: [=                                                 ] 0.49%progress: [=                                                 ] 0.59%progress: [=                                                 ] 0.68%progress: [=                                                 ] 0.78%progress: [=                                                 ] 0.88%progress: [=                                                 ] 0.98%progress: [=                                                 ] 1.07%progress: [=                                                 ] 1.17%progress: [=                                                 ] 1.27%progress: [=                                                 ] 1.37%progress: [=                                                 ] 1.46%progress: [=                                                 ] 1.56%progress: [=                                                 ] 1.66%progress: [=                                                 ] 1.76%progress: [=                                                 ] 1.86%progress: [=                                                 ] 1.95%progress: [==                                                ] 2.05%progress: [==                                                ] 2.15%progress: [==                                                ] 2.25%progress: [==                                                ] 2.34%
-adv found:
-adv is: [60760.000000 0.000000 1.570796 1200.000000 60.000000 ]
-it's output is: [0.000000 -0.010303 -0.049900 -0.008133 -0.046683 ]
-
-adv found:
-adv is: [60760.000000 0.000000 1.570796 1196.562500 60.000000 ]
-it's output is: [0.000000 -0.010266 -0.049859 -0.008097 -0.046644 ]
-time: 0.016530 
-
-

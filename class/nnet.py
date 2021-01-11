@@ -2,10 +2,12 @@ import numpy as np
 import time
 import os
 import sys
+import psutil
+import pickle
 import multiprocessing
+from functools import partial
 from multiprocessing import get_context
-from multiprocessing import Process, Queue
-from random import shuffle
+
 
 class nnetwork:
 
@@ -16,30 +18,64 @@ class nnetwork:
         self.numLayer = len(W)
         self.start_time = 0
         self.filename = ''
-        self.test_time = 0
-        self.facetv_time0 = 0
-        self.facetv_time1 = 0
+        self.compute_unsafety = False
+        self.unsafe_domain = None
+
 
     def verification(self):
         print('Designed to be replaced')
 
-    def layerOutput(self, inputPoly, m):
-        # print('Layer: %d\n'%m)
+
+    # nn output of input starting from mth layer
+    def layerOutput(self, inputPoly, m, lock=None):
+
         inputSets = [inputPoly]
         for i in range(m, self.numLayer):
-            output = Queue()
-            processes = []
-            for aPoly in inputSets:
-                processes.append(Process(target=self.singleLayerOutput, args=(aPoly, i, output)))
+            inputSets_len = len(inputSets)
+            n = 0
+            while n < inputSets_len:
+                aPoly = inputSets.pop(0)
+                n += 1
+                inputSets.extend(self.singleLayerOutput(aPoly, i))
 
-            for p in processes:
-                p.start()
-            for p in processes:
-                p.join()
+        if self.compute_unsafety:
+            unsafe_inputs = self.backtrack(inputSets)
+            return unsafe_inputs
+        else:
+            verify_result = self.verification(inputSets)
+            if not verify_result:
+                lock.acquire()
+                try:
+                    print('time elapsed: %f seconds ' % (time.time() - self.start_time))
+                    print('result: unsafe\n')
+                    file = open(self.filename, 'w')
+                    file.write('time elapsed: %f seconds \n' % (time.time()-self.start_time))
+                    file.write('result: unsafe')
+                    file.close()
+                finally:
+                    lock.release()
+                    os.system('pkill -9 python')
 
-            inputSets = [output.get() for p in processes]
 
-        return inputSets
+    def backtrack(self, vfl_sets):
+        matrix_A = self.unsafe_domain[0]
+        vector_d = self.unsafe_domain[1]
+
+        vfls_unsafe = vfl_sets
+        for n in range(len(matrix_A)):
+            A = matrix_A[[n]]
+            d = vector_d[[n]]
+            temp = []
+            for vfl in vfls_unsafe:
+                subvfl0 = vfl.single_split(A, d)
+                if subvfl0:
+                    temp.append(subvfl0)
+
+            vfls_unsafe = temp
+
+        vfls_unsafe = [vfl.vertices for vfl in vfls_unsafe]
+        return vfls_unsafe
+
 
     # point output of nn
     def outputPoint(self, inputPoint):
@@ -47,6 +83,7 @@ class nnetwork:
             inputPoint = self.singleLayerPointOutput(inputPoint, i)
 
         return inputPoint
+
 
     # point output of single layer
     def singleLayerPointOutput(self, inputPoint, layerID):
@@ -62,41 +99,23 @@ class nnetwork:
 
     # polytope output of single layer
     def singleLayerOutput(self, inputPoly, layerID):
-
         W = self.W[layerID]
         b = self.b[layerID]
         inputPoly.linearTrans(W, b)
 
-        if layerID == self.numLayer - 1:
-            inputPoly.lattice = []
-            verify_result = self.verification(inputPoly)
-            if not verify_result:
-                if not os.path.isfile(self.filename):
-                    print('Time elapsed: %f seconds' % (time.time()-self.start_time))
-                    print('Result: unsafe \n')
-                    file = open(self.filename, 'w')
-                    file.write('time elapsed: %f seconds \n' % (time.time()-self.start_time))
-                    file.write('result: unsafe')
-                    file.close()
+        # partition graph sets according to properties of the relu function
+        if layerID == self.numLayer-1:
+            return [inputPoly]
 
-                    os.system('pkill -9 python')
+        polys = [inputPoly]
 
-            return
+        splited_polys = []
+        for aPoly in polys:
+            splited_polys.extend(self.relu_layer(aPoly, np.array([]), flag=False))
+        polys = splited_polys
 
-        polys = self.relu_layer(inputPoly, np.array([]), flag=False)
-        shuffle(polys)
-        if layerID <1:
-            processes = []
-            for aPoly in polys:
-                processes.append(Process(target=self.singleLayerOutput, args=(aPoly, layerID+1)))
+        return polys
 
-            for p in processes:
-                p.start()
-            for p in processes:
-                p.join()
-        else:
-            for aPoly in polys:
-                self.singleLayerOutput(aPoly, layerID + 1)
 
     # partition one input polytope with a hyberplane
     def splitPoly(self, inputPoly, idx):
@@ -115,9 +134,7 @@ class nnetwork:
         if (neurons.shape[0] == 0) and flag:
             return [im_fl]
 
-        t0 =time.time()
         new_neurons, new_neurons_neg = self.get_valid_neurons(im_fl, neurons)
-        self.test_time = self.test_time + time.time() - t0
 
         im_fl.map_negative_poly(new_neurons_neg)
 

@@ -1,2 +1,0 @@
-time elapsed: 0.078462 seconds 
-result: safe

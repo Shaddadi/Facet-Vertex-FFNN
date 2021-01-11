@@ -1,18 +1,0 @@
-Using settings profile: 'multibfs'. Override num process: None
-input ub: [-0.29855281193475053, 0.009549296585513092, 0.49999989597792077, 0.5, 0.5]
-input lb: [-0.30353115613746867, -0.009549296585513092, 0.4933803235848431, 0.3, 0.3]
-Running in parallel with 20 processes
-(0.0 sec) Q: 0, Sets: 0/1  (0.0%) ETA: - (expected 1 stars)   
-(0.1 sec) Q: 0, Sets: 76/85  (0.195%) ETA: 51.9 sec (expected 38912 stars)   
-(0.2 sec) Q: 0, Sets: 1437/1529  (23.637%) ETA: 0.7 sec (expected 6080 stars)   (0.3 sec) Q: 0, Sets: 3019/3086  (41.82%) ETA: 0.4 sec (expected 7219 stars)   
-(0.4 sec) Q: 2, Sets: 4618/4720  (56.429%) ETA: 0.3 sec (expected 8184 stars)   (0.5 sec) Q: 0, Sets: 6504/6598  (69.113%) ETA: 0.2 sec (expected 9411 stars)   (0.6 sec) Q: 0, Sets: 8141/8241  (78.51%) ETA: 0.2 sec (expected 10369 stars)   (0.7 sec) Q: 0, Sets: 9778/9851  (84.257%) ETA: 0.1 sec (expected 11605 stars)   
-(0.8 sec) Q: 3, Sets: 11526/11575  (91.479%) ETA: 0.1 sec (expected 12600 stars)   (0.9 sec) Q: 5, Sets: 13201/13258  (93.269%) ETA: 0.1 sec (expected 14154 stars)   (1.0 sec) Q: 0, Sets: 14526/14546  (96.106%) ETA: 0.0 sec (expected 15115 stars)   (1.1 sec) Q: 0, Sets: 15860/15872  (97.394%) ETA: 0.0 sec (expected 16284 stars)   
-
-Total Stars: 16381
-Runtime: 1.2 sec
-Completed work frac: 1.0
-Num Stars Copied Between Processes: 282
-Num Lps During Enumeration: 104239
-Total Num Lps: 120620
-
-Result: network is SAFE

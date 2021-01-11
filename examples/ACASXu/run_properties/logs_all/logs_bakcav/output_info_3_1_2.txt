@@ -1,20 +1,0 @@
-Using settings profile: 'multibfs'. Override num process: None
-input ub: [-0.29855281193475053, 0.009549296585513092, 0.49999989597792077, 0.5, 0.5]
-input lb: [-0.30353115613746867, -0.009549296585513092, 0.4933803235848431, 0.3, 0.3]
-Running in parallel with 20 processes
-(0.0 sec) Q: 0, Sets: 0/1  (0.0%) ETA: - (expected 1 stars)   
-(0.1 sec) Q: 11, Sets: 282/323  (2.582%) ETA: 3.9 sec (expected 10923 stars)   
-(0.2 sec) Q: 3, Sets: 1277/1381  (19.277%) ETA: 0.9 sec (expected 6625 stars)   (0.3 sec) Q: 6, Sets: 2431/2581  (26.067%) ETA: 0.9 sec (expected 9326 stars)   
-(0.4 sec) Q: 3, Sets: 3908/4062  (33.547%) ETA: 0.8 sec (expected 11649 stars)   (0.5 sec) Q: 0, Sets: 5428/5597  (45.18%) ETA: 0.6 sec (expected 12014 stars)   (0.6 sec) Q: 0, Sets: 6986/7132  (54.677%) ETA: 0.5 sec (expected 12777 stars)   (0.7 sec) Q: 0, Sets: 8506/8648  (58.162%) ETA: 0.5 sec (expected 14625 stars)   
-(0.8 sec) Q: 0, Sets: 10291/10440  (63.107%) ETA: 0.5 sec (expected 16307 stars)   (0.9 sec) Q: 0, Sets: 11588/11742  (66.113%) ETA: 0.5 sec (expected 17528 stars)   (1.0 sec) Q: 0, Sets: 12678/12829  (70.616%) ETA: 0.4 sec (expected 17953 stars)   (1.1 sec) Q: 0, Sets: 13629/13777  (72.86%) ETA: 0.4 sec (expected 18706 stars)   (1.2 sec) Q: 0, Sets: 14737/14885  (73.85%) ETA: 0.4 sec (expected 19955 stars)   (1.3 sec) Q: 1, Sets: 15851/16008  (75.587%) ETA: 0.4 sec (expected 20970 stars)   (1.4 sec) Q: 0, Sets: 16933/17081  (77.718%) ETA: 0.4 sec (expected 21788 stars)   (1.5 sec) Q: 0, Sets: 18012/18158  (80.17%) ETA: 0.4 sec (expected 22467 stars)   
-(1.6 sec) Q: 1, Sets: 18980/19141  (80.783%) ETA: 0.4 sec (expected 23495 stars)   (1.7 sec) Q: 0, Sets: 20067/20244  (82.317%) ETA: 0.4 sec (expected 24378 stars)   (1.8 sec) Q: 0, Sets: 21254/21399  (82.719%) ETA: 0.4 sec (expected 25694 stars)   (1.9 sec) Q: 1, Sets: 22277/22422  (85.602%) ETA: 0.3 sec (expected 26024 stars)   (2.0 sec) Q: 0, Sets: 23363/23511  (86.388%) ETA: 0.3 sec (expected 27044 stars)   (2.1 sec) Q: 0, Sets: 24403/24569  (86.975%) ETA: 0.3 sec (expected 28058 stars)   (2.2 sec) Q: 0, Sets: 25464/25613  (87.164%) ETA: 0.3 sec (expected 29214 stars)   (2.3 sec) Q: 0, Sets: 26535/26657  (87.479%) ETA: 0.3 sec (expected 30333 stars)   (2.4 sec) Q: 1, Sets: 27500/27642  (91.192%) ETA: 0.2 sec (expected 30156 stars)   (2.5 sec) Q: 0, Sets: 28547/28681  (91.969%) ETA: 0.2 sec (expected 31040 stars)   (2.6 sec) Q: 0, Sets: 29561/29688  (94.859%) ETA: 0.1 sec (expected 31163 stars)   (2.7 sec) Q: 0, Sets: 30581/30701  (95.975%) ETA: 0.1 sec (expected 31863 stars)   (2.8 sec) Q: 0, Sets: 31611/31723  (96.92%) ETA: 0.1 sec (expected 32615 stars)   (2.9 sec) Q: 0, Sets: 32536/32613  (97.587%) ETA: 0.1 sec (expected 33340 stars)   (3.0 sec) Q: 1, Sets: 33468/33552  (98.842%) ETA: 0.0 sec (expected 33860 stars)   (3.1 sec) Q: 0, Sets: 34556/34657  (99.004%) ETA: 0.0 sec (expected 34904 stars)   
-(3.2 sec) Q: 0, Sets: 35530/35623  (99.28%) ETA: 0.0 sec (expected 35788 stars)   (3.3 sec) Q: 0, Sets: 36447/36513  (99.619%) ETA: 0.0 sec (expected 36586 stars)   (3.4 sec) Q: 3, Sets: 37509/37545  (99.669%) ETA: 0.0 sec (expected 37634 stars)   (3.5 sec) Q: 2, Sets: 38435/38503  (99.888%) ETA: 0.0 sec (expected 38478 stars)   (3.6 sec) Q: 0, Sets: 39388/39430  (99.964%) ETA: 0.0 sec (expected 39402 stars)   (3.7 sec) Q: 0, Sets: 40191/40194  (99.999%) ETA: 0.0 sec (expected 40191 stars)   
-
-Total Stars: 40273
-Runtime: 3.8 sec
-Completed work frac: 1.0000001192092896
-Num Stars Copied Between Processes: 407
-Num Lps During Enumeration: 260240
-Total Num Lps: 380341
-
-Result: network is SAFE

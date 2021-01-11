@@ -4,6 +4,7 @@ import torch
 import numpy as np
 import operator as op
 from functools import reduce
+import reference as rf
 import vertex_facet_lattice as vfl
 import collections as cln
 import time
