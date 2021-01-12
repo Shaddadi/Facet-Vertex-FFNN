@@ -1,4 +1,4 @@
-# Computation of Reachable Sets for FFNNd
+# Computation of Reachable Sets for FFNN
 
 ## Introduction
 
