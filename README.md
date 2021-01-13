@@ -14,7 +14,7 @@ Software
 ```txt
 Ubunu 18.04
 Python 3.6
-Matlab 2019b
+Matlab 2019b for plotting Figure 4 in the paper
 ```
 
 Hardware
