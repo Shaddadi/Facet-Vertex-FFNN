@@ -1,11 +1,4 @@
 psutil
-time
-nnet
-pickle
-cubelattice
-multiprocessing
-functools
 scipy
 random
-numpy
 argparse
