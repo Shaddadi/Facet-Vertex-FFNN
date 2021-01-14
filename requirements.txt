@@ -1,4 +1,3 @@
-psutil
-scipy
-random
-argparse
+psutil>=5.8
+scipy>=1.5
+argparse>=1.2
