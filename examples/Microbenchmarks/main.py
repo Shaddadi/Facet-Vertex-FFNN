@@ -2,11 +2,8 @@ import sys
 sys.path.insert(0, '../../class')
 
 import os
-import psutil
 import time
 import nnet
-import pickle
-import FFNN as ffnn
 import cubelattice as cl
 import multiprocessing
 from functools import partial

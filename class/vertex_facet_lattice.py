@@ -1,13 +1,54 @@
 import sys
-import torch
-import copy
-import time
 import copy as cp
 import numpy as np
-import collections as cln
 
 class VFL:
+    """
+    A class used to represent the data structure of Vertex-Facet Lattice
+
+    Attributes
+    ----------
+    lattice : array
+        a matrix to represent the lattice
+    vertices : array
+        vertices of a polytope
+    dim : int
+        the dimension of a polytope
+    M : array
+        a matrix for affine transformation
+    b: array
+        a vector for affine transformation
+
+    Methods
+    -------
+    linearTrans(M, b)
+        apply affine transformation on VFL
+
+    map_negative_poly(n)
+        map polytopes that locate in the negative domain of the ReLU functions
+
+    single_split_relu(idx)
+        split operation from one ReLU neuron
+
+    single_split(A, d)
+        split operation from one hyperplane
+    """
+    
     def __init__(self, lattice, vertices, dim, M, b):
+        """
+        Parameters
+        ----------
+        lattice : array
+            a matrix to represent the lattice
+        vertices : array
+            vertices of a polytope
+        dim : int
+            the dimension of a polytope
+        M : array
+            a matrix for affine transformation
+        b: array
+            a vector for affine transformation
+        """
         self.lattice = lattice
         self.vertices = vertices
         self.dim = dim
@@ -15,13 +56,16 @@ class VFL:
         self.b = b
 
 
-    def to_cuda(self):
-        self.is_cuda = True
-        self.vertices = self.vertices.cuda()
-        self.vertices_init = self.vertices_init.cuda()
-
-    # linear Transformation
     def linearTrans(self, M, b):
+        """ Affine transformation on VFL
+
+        Parameters
+        ----------
+        M : array
+            a matrix for affine transformation
+        b: array
+            a vector for affine transformation
+        """
         if M.shape[1] != self.M.shape[0]:
             print("dimension is inconsistant")
             sys.exit(1)
@@ -35,6 +79,14 @@ class VFL:
         # set some dim to zero for Relu function
 
     def map_negative_poly(self, n):
+        """ Map VFL that locate in the negative domain of the ReLU functions
+
+        Parameters
+        ----------
+        n : array or int
+            indices of the target ReLU neurons
+
+        """
         if self.dim == 0:
             return self
 
@@ -42,7 +94,16 @@ class VFL:
         self.b[n, :] = 0
         return self
 
+
     def single_split_relu(self, idx):
+        """ Split operation of one ReLU neuron
+
+        Parameters
+        ----------
+        idx : int
+            index of the target ReLU neuron
+
+        """
         elements = np.dot(self.vertices, self.M[idx,:].T)+self.b[idx,:].T
         if np.any(elements==0.0):
             sys.exit('Hyperplane intersect with vertices!')
@@ -68,7 +129,6 @@ class VFL:
         elements0 = elements[less_bool]
         elements1 = elements[more_bool]
 
-        # t0 = time.time()
         edges = np.dot(vs_facets0.astype(np.float32), vs_facets1.T.astype(np.float32))
         edges_indx = np.array(np.nonzero(edges == self.dim - 1))
         indx0, indx1 = edges_indx[0], edges_indx[1]
@@ -78,8 +138,6 @@ class VFL:
         new_vs = p0s + ((p1s - p0s).T * alpha).T
         new_vs_facets = np.logical_and(vs_facets0[indx0], vs_facets1[indx1])
 
-        # self.time0 = time.time() - t0
-        # t1 = time.time()
         new_vs_facets0 = np.concatenate((vs_facets0, new_vs_facets))
         sub_vs_facets0 = new_vs_facets0[:,np.any(vs_facets0,0)]
         vs_facets_hp = np.zeros((len(sub_vs_facets0), 1), dtype=bool)
@@ -99,15 +157,22 @@ class VFL:
         subset1 = VFL(sub_vs_facets1, new_vertices1, self.dim, cp.copy(self.M), cp.copy(self.b))
         if flg == -1:
             subset1.map_negative_poly(idx)
-
-        # self.time1 = time.time()-t1
-        # subset0.time0 = self.time0
-        # subset0.time1 = self.time1
         
         return subset0, subset1
 
 
     def single_split(self, A, d):
+        """ Split operation of VFL from a hyperplane AX + d = 0
+
+        Parameters
+        ----------
+        A : array
+        d : float
+
+        Reutrn
+        ------
+        A VFL locating in AX + d <= 0
+        """
         elements = np.dot(np.dot(A,self.M), self.vertices.T) + np.dot(A, self.b) +d
         elements = elements[0]
         if np.all(elements >= 0):
@@ -128,7 +193,6 @@ class VFL:
         elements0 = elements[negative_bool]
         elements1 = elements[positive_bool]
 
-        # t0 = time.time()
         edges = np.dot(vs_facets0.astype(np.float32), vs_facets1.T.astype(np.float32))
         edges_indx = np.array(np.nonzero(edges == self.dim - 1))
         indx0, indx1 = edges_indx[0], edges_indx[1]
