@@ -1,0 +1,151 @@
+\hypertarget{classvertex__facet__lattice_1_1VFL}{}\section{vertex\+\_\+facet\+\_\+lattice.\+V\+FL Class Reference}
+\label{classvertex__facet__lattice_1_1VFL}\index{vertex\+\_\+facet\+\_\+lattice.\+V\+FL@{vertex\+\_\+facet\+\_\+lattice.\+V\+FL}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classvertex__facet__lattice_1_1VFL_a0657c8c08ad4ed2b4c78dde5f020ca9e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, lattice, vertices, dim, M, b)
+\item 
+def \hyperlink{classvertex__facet__lattice_1_1VFL_ac24a7e3a7c2b5fd64b9b64dee65aa762}{linear\+Trans} (self, M, b)
+\item 
+def \hyperlink{classvertex__facet__lattice_1_1VFL_ae9e7eb17406dc576a544decaec956bbc}{map\+\_\+negative\+\_\+poly} (self, n)
+\item 
+def \hyperlink{classvertex__facet__lattice_1_1VFL_afee114c93d9ab6cf9cc36af9dab9ddfd}{single\+\_\+split\+\_\+relu} (self, idx)
+\item 
+def \hyperlink{classvertex__facet__lattice_1_1VFL_a1024ee850939d4c02e21c0398d3bfc8a}{single\+\_\+split} (self, A, d)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_a9d38b19632334ef3142e4968d0b1d2bc}\label{classvertex__facet__lattice_1_1VFL_a9d38b19632334ef3142e4968d0b1d2bc}} 
+{\bfseries lattice}
+\item 
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_ae18d106c24ca606f63cf75b520618558}\label{classvertex__facet__lattice_1_1VFL_ae18d106c24ca606f63cf75b520618558}} 
+{\bfseries vertices}
+\item 
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_ae6444e2ec916e0e5c06a6f8c1e974ee3}\label{classvertex__facet__lattice_1_1VFL_ae6444e2ec916e0e5c06a6f8c1e974ee3}} 
+{\bfseries dim}
+\item 
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_ab01d41cccb27cd78b632bb771aa4b49f}\label{classvertex__facet__lattice_1_1VFL_ab01d41cccb27cd78b632bb771aa4b49f}} 
+{\bfseries M}
+\item 
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_a83d80abdeb5ec08c80c7338cd9f731bf}\label{classvertex__facet__lattice_1_1VFL_a83d80abdeb5ec08c80c7338cd9f731bf}} 
+{\bfseries b}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A class used to represent the data structure of Vertex-Facet Lattice
+
+Attributes
+----------
+lattice : array
+    a matrix to represent the lattice
+vertices : array
+    vertices of a polytope
+dim : int
+    the dimension of a polytope
+M : array
+    a matrix for affine transformation
+b: array
+    a vector for affine transformation
+
+Methods
+-------
+linearTrans(M, b)
+    apply affine transformation on VFL
+
+map_negative_poly(n)
+    map polytopes that locate in the negative domain of the ReLU functions
+
+single_split_relu(idx)
+    split operation from one ReLU neuron
+
+single_split(A, d)
+    split operation from one hyperplane
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_a0657c8c08ad4ed2b4c78dde5f020ca9e}\label{classvertex__facet__lattice_1_1VFL_a0657c8c08ad4ed2b4c78dde5f020ca9e}} 
+\index{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def vertex\+\_\+facet\+\_\+lattice.\+V\+F\+L.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lattice,  }\item[{}]{vertices,  }\item[{}]{dim,  }\item[{}]{M,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+lattice : array
+    a matrix to represent the lattice
+vertices : array
+    vertices of a polytope
+dim : int
+    the dimension of a polytope
+M : array
+    a matrix for affine transformation
+b: array
+    a vector for affine transformation
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_ac24a7e3a7c2b5fd64b9b64dee65aa762}\label{classvertex__facet__lattice_1_1VFL_ac24a7e3a7c2b5fd64b9b64dee65aa762}} 
+\index{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}!linear\+Trans@{linear\+Trans}}
+\index{linear\+Trans@{linear\+Trans}!vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}}
+\subsubsection{\texorpdfstring{linear\+Trans()}{linearTrans()}}
+{\footnotesize\ttfamily def vertex\+\_\+facet\+\_\+lattice.\+V\+F\+L.\+linear\+Trans (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{M,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Affine transformation on VFL
+
+Parameters
+----------
+M : array
+    a matrix for affine transformation
+b: array
+    a vector for affine transformation
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_ae9e7eb17406dc576a544decaec956bbc}\label{classvertex__facet__lattice_1_1VFL_ae9e7eb17406dc576a544decaec956bbc}} 
+\index{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}!map\+\_\+negative\+\_\+poly@{map\+\_\+negative\+\_\+poly}}
+\index{map\+\_\+negative\+\_\+poly@{map\+\_\+negative\+\_\+poly}!vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}}
+\subsubsection{\texorpdfstring{map\+\_\+negative\+\_\+poly()}{map\_negative\_poly()}}
+{\footnotesize\ttfamily def vertex\+\_\+facet\+\_\+lattice.\+V\+F\+L.\+map\+\_\+negative\+\_\+poly (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Map VFL that locate in the negative domain of the ReLU functions
+
+Parameters
+----------
+n : array or int
+    indices of the target ReLU neurons\end{DoxyVerb}
+ \mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_a1024ee850939d4c02e21c0398d3bfc8a}\label{classvertex__facet__lattice_1_1VFL_a1024ee850939d4c02e21c0398d3bfc8a}} 
+\index{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}!single\+\_\+split@{single\+\_\+split}}
+\index{single\+\_\+split@{single\+\_\+split}!vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}}
+\subsubsection{\texorpdfstring{single\+\_\+split()}{single\_split()}}
+{\footnotesize\ttfamily def vertex\+\_\+facet\+\_\+lattice.\+V\+F\+L.\+single\+\_\+split (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{A,  }\item[{}]{d }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Split operation of VFL from a hyperplane AX + d = 0
+
+Parameters
+----------
+A : array
+d : float
+
+Reutrn
+------
+A VFL locating in AX + d <= 0
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classvertex__facet__lattice_1_1VFL_afee114c93d9ab6cf9cc36af9dab9ddfd}\label{classvertex__facet__lattice_1_1VFL_afee114c93d9ab6cf9cc36af9dab9ddfd}} 
+\index{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}!single\+\_\+split\+\_\+relu@{single\+\_\+split\+\_\+relu}}
+\index{single\+\_\+split\+\_\+relu@{single\+\_\+split\+\_\+relu}!vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL@{vertex\+\_\+facet\+\_\+lattice\+::\+V\+FL}}
+\subsubsection{\texorpdfstring{single\+\_\+split\+\_\+relu()}{single\_split\_relu()}}
+{\footnotesize\ttfamily def vertex\+\_\+facet\+\_\+lattice.\+V\+F\+L.\+single\+\_\+split\+\_\+relu (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{idx }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Split operation of one ReLU neuron
+
+Parameters
+----------
+idx : int
+    index of the target ReLU neuron\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+class/vertex\+\_\+facet\+\_\+lattice.\+py\end{DoxyCompactItemize}

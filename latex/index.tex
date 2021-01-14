@@ -1,0 +1,70 @@
+\subsection*{Introduction}
+
+This repository is for the {\itshape Reachability Analysis of Deep Re\+LU Neural Networks using Facet-\/\+Vertex Incidence}.
+
+{\bfseries Caution\+:} A 64\+GB R\+AM is recommended to generate all the results.
+
+\subsection*{Checked Environment}
+
+Software
+
+
+\begin{DoxyCode}
+Ubunu 18.04
+Python 3.6
+Matlab 2019b \textcolor{keywordflow}{for} plotting Figure 4 in the paper
+\end{DoxyCode}
+
+
+Hardware
+
+
+\begin{DoxyCode}
+CPU: Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz 10 cores
+Memory: 128GB
+\end{DoxyCode}
+
+
+\subsection*{Installation}
+
+All dependencies are included
+
+\subsection*{Implementation}
+
+To reproduce all the results($\sim$1 hour), run 
+\begin{DoxyCode}
+sudo chmod +x run\_all.sh
+./run\_all.sh
+\end{DoxyCode}
+ It will generate the result of our method in Table 1, Table 2, Figure 3 and Figure 4 in the paper
+
+\#\#\# A\+C\+A\+S\+Xu 
+\begin{DoxyCode}
+cd examples/ACASXu
+python3 main.py --property <index of the property> --n1 <first index of the network> --n2 <second index of
+       the network> --compute\_unsafety <action>
+\end{DoxyCode}
+ For instance, Property 2 on the Network1\+\_\+2 can be tested with
+
+
+\begin{DoxyCode}
+python3 main.py --property 2 --n1 1 --n2 2
+\end{DoxyCode}
+ The unsafe input domain of Property 2 on the Network1\+\_\+2 can be computed with 
+\begin{DoxyCode}
+python3 main.py --property 2 --n1 1 --n2 2 --compute\_unsafety
+\end{DoxyCode}
+
+
+\#\#\# Microbenchmarks 
+\begin{DoxyCode}
+cd examples/Microbenchmarks
+python3 main.py --n1 <first index of the network> --n2 <second index of the network> 
+\end{DoxyCode}
+ For instance, Network2\+\_\+3 can be tested with
+
+
+\begin{DoxyCode}
+python3 main.py --n1 2 --n2 3
+\end{DoxyCode}
+ 

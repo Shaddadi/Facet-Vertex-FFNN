@@ -1,0 +1,241 @@
+\hypertarget{classnnet_1_1nnetwork}{}\section{nnet.\+nnetwork Class Reference}
+\label{classnnet_1_1nnetwork}\index{nnet.\+nnetwork@{nnet.\+nnetwork}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classnnet_1_1nnetwork_ae3c3989cf684b36b9487b5127f09f35c}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, W, b)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a228fd032b42053b8c8b3c5d9b6d6bdd0}{verification} (self)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a3d6fad4cceab8ce0a40a5d06c58b1a86}{layer\+Output} (self, input\+Poly, m, lock=None)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a6298ba244c8288b4be06ca140be7fafa}{backtrack} (self, vfl\+\_\+sets)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a27f13ef2943f1c10aa7dd049726949fb}{single\+Layer\+Output} (self, input\+Poly, layer\+ID)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a0ffc5a42839ee2eb600c8f8113d3a20a}{split\+Poly} (self, input\+Poly, idx)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a29d948dbd33c34bb61d754a98a4422a9}{relu\+\_\+layer} (self, im\+\_\+fl, neurons, flag=True)
+\item 
+def \hyperlink{classnnet_1_1nnetwork_a764b3d1d0f1c3c164b4c3a9ee9bedeed}{get\+\_\+valid\+\_\+neurons} (self, afl, neurons)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_a47cef49695e899c9a69b98003342aa28}\label{classnnet_1_1nnetwork_a47cef49695e899c9a69b98003342aa28}} 
+{\bfseries W}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_a42db5d6e2c961b3a3df2b5a81e3c4eec}\label{classnnet_1_1nnetwork_a42db5d6e2c961b3a3df2b5a81e3c4eec}} 
+{\bfseries b}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_a55aa5bafa68b66c8ae1d45467ac4b494}\label{classnnet_1_1nnetwork_a55aa5bafa68b66c8ae1d45467ac4b494}} 
+{\bfseries num\+Layer}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_ab9779f47fd5fd335e83b6ad56c3c6a88}\label{classnnet_1_1nnetwork_ab9779f47fd5fd335e83b6ad56c3c6a88}} 
+{\bfseries start\+\_\+time}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_af9380e56e63c2520ddda054237a6331f}\label{classnnet_1_1nnetwork_af9380e56e63c2520ddda054237a6331f}} 
+{\bfseries filename}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_a27e34b906533d56055db78d9ca4d2a0a}\label{classnnet_1_1nnetwork_a27e34b906533d56055db78d9ca4d2a0a}} 
+{\bfseries compute\+\_\+unsafety}
+\item 
+\mbox{\Hypertarget{classnnet_1_1nnetwork_a4e707ef7b9b90fd462cf401c77fb8039}\label{classnnet_1_1nnetwork_a4e707ef7b9b90fd462cf401c77fb8039}} 
+{\bfseries unsafe\+\_\+domain}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}    A class used to represent the process of VFLs in neural networks
+    ...
+    Attributes
+    ----------
+    W : array
+        weights of each layer in the network
+    b : array
+        bias of each layer in the network
+    numLayer : int
+        the number of layers
+    start_time : float
+        specify the starting time of computation
+    filename: str
+        specify the file path to save results
+    compute_unsafety: bool
+        determine if the unsafe inputs are computed
+    unsafe_domain: array
+        specify the unsafe output domain of the network
+
+    Methods
+    -------
+    verification()
+        a function to verify the reachable output domain
+
+    layerOutput(inputPoly, m, lock=None):
+        compute output reachable sets given a input set in m-th layer
+
+    backtrack(vfl_sets)
+        compute corresponding unsafe input sets given output sets
+
+    singleLayerOutput(inputPoly, layerID)
+        compute output reachable sets of one layer given input sets to this layer
+
+    splitPoly(inputPoly, idx):
+        split one set w.r.t. one neuron
+
+    relu_layer(im_fl, neurons, flag=True)
+        a recursive function to compute reachable sets in one layer
+
+    get_valid_neurons(afl, neurons)
+        a recursive function to identify neurons that split input sets\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnnet_1_1nnetwork_ae3c3989cf684b36b9487b5127f09f35c}\label{classnnet_1_1nnetwork_ae3c3989cf684b36b9487b5127f09f35c}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{W,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+W : array
+    weights of each layer in the network
+b : array
+    bias of each layer in the network
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnnet_1_1nnetwork_a6298ba244c8288b4be06ca140be7fafa}\label{classnnet_1_1nnetwork_a6298ba244c8288b4be06ca140be7fafa}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+backtrack (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{vfl\+\_\+sets }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute corresponding unsafe input sets given output sets
+
+Parameters
+----------
+vfl_sets: list
+    output reachable sets
+
+Return
+------
+vfls_unsafe: list
+    unsafe input sets
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnnet_1_1nnetwork_a764b3d1d0f1c3c164b4c3a9ee9bedeed}\label{classnnet_1_1nnetwork_a764b3d1d0f1c3c164b4c3a9ee9bedeed}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!get\+\_\+valid\+\_\+neurons@{get\+\_\+valid\+\_\+neurons}}
+\index{get\+\_\+valid\+\_\+neurons@{get\+\_\+valid\+\_\+neurons}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{get\+\_\+valid\+\_\+neurons()}{get\_valid\_neurons()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+get\+\_\+valid\+\_\+neurons (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{afl,  }\item[{}]{neurons }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A recursive function to identify neurons that split input sets
+
+Parameters
+----------
+afl: vfl
+neurons: array
+    indices of candidiate neurons
+
+Return
+------
+valid_neurons_neg_pos: array
+    neurons that split the afl
+valid_neurons_neg: array
+    neurons where the afl locates in their negative domain
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnnet_1_1nnetwork_a3d6fad4cceab8ce0a40a5d06c58b1a86}\label{classnnet_1_1nnetwork_a3d6fad4cceab8ce0a40a5d06c58b1a86}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!layer\+Output@{layer\+Output}}
+\index{layer\+Output@{layer\+Output}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{layer\+Output()}{layerOutput()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+layer\+Output (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+Poly,  }\item[{}]{m,  }\item[{}]{lock = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute output reachable sets given a input set in m-th layer
+
+Parameters
+----------
+inputPoly: vfl
+    an input vfl
+m: int
+    it indicates m-th layer
+lock: lock
+    it limits multiple access to one file
+
+Return
+------
+when "compute_unsafety" is set True, it returns unsafe input sets computed by "backtrack"
+when "compute_unsafety" is set True, it returns none
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnnet_1_1nnetwork_a29d948dbd33c34bb61d754a98a4422a9}\label{classnnet_1_1nnetwork_a29d948dbd33c34bb61d754a98a4422a9}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!relu\+\_\+layer@{relu\+\_\+layer}}
+\index{relu\+\_\+layer@{relu\+\_\+layer}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{relu\+\_\+layer()}{relu\_layer()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+relu\+\_\+layer (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{im\+\_\+fl,  }\item[{}]{neurons,  }\item[{}]{flag = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}A recursive function to compute reachable sets in one layer
+
+Parameters
+----------
+im_fl: vfl
+neurons: array
+    indices of neurons
+
+Return
+------
+all_fls: list
+    output reachable sets of one layer
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnnet_1_1nnetwork_a27f13ef2943f1c10aa7dd049726949fb}\label{classnnet_1_1nnetwork_a27f13ef2943f1c10aa7dd049726949fb}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!single\+Layer\+Output@{single\+Layer\+Output}}
+\index{single\+Layer\+Output@{single\+Layer\+Output}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{single\+Layer\+Output()}{singleLayerOutput()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+single\+Layer\+Output (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+Poly,  }\item[{}]{layer\+ID }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute output reachable sets of one layer given input sets to this layer
+
+Parameters
+----------
+inputPoly: vfl
+    an input vfl to the layer
+layerID: int
+    index of the layer
+
+Return
+------
+polys: list
+    output reachable sets of the layer
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnnet_1_1nnetwork_a0ffc5a42839ee2eb600c8f8113d3a20a}\label{classnnet_1_1nnetwork_a0ffc5a42839ee2eb600c8f8113d3a20a}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!split\+Poly@{split\+Poly}}
+\index{split\+Poly@{split\+Poly}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{split\+Poly()}{splitPoly()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+split\+Poly (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+Poly,  }\item[{}]{idx }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Split one set w.r.t. one neuron
+
+Parameters
+----------
+inputPoly: vfl
+    an input vfl to the layer
+idx: int
+    index of the neuron
+
+Return
+------
+outputPolySets: list
+    splited subsets
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classnnet_1_1nnetwork_a228fd032b42053b8c8b3c5d9b6d6bdd0}\label{classnnet_1_1nnetwork_a228fd032b42053b8c8b3c5d9b6d6bdd0}} 
+\index{nnet\+::nnetwork@{nnet\+::nnetwork}!verification@{verification}}
+\index{verification@{verification}!nnet\+::nnetwork@{nnet\+::nnetwork}}
+\subsubsection{\texorpdfstring{verification()}{verification()}}
+{\footnotesize\ttfamily def nnet.\+nnetwork.\+verification (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}External verification funtions will be assigned to verify output reachable sets
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+class/nnet.\+py\end{DoxyCompactItemize}

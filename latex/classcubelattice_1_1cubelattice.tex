@@ -1,0 +1,139 @@
+\hypertarget{classcubelattice_1_1cubelattice}{}\section{cubelattice.\+cubelattice Class Reference}
+\label{classcubelattice_1_1cubelattice}\index{cubelattice.\+cubelattice@{cubelattice.\+cubelattice}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classcubelattice_1_1cubelattice_a877800444043a45c73c988fe0b057950}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, lb, ub)
+\item 
+def \hyperlink{classcubelattice_1_1cubelattice_af29b5923e02e375b796f4d175348473f}{to\+\_\+lattice} (self)
+\item 
+def \hyperlink{classcubelattice_1_1cubelattice_a8bc4766c57d45c810334d87ad78ca653}{compute\+\_\+lattice} (self)
+\item 
+def \hyperlink{classcubelattice_1_1cubelattice_aa93e98a034eb32f37711c461bfd5d7d5}{compute\+\_\+vertex} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a2a9db5c52ad5e50fe41be017d813792b}\label{classcubelattice_1_1cubelattice_a2a9db5c52ad5e50fe41be017d813792b}} 
+{\bfseries dim}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_af9e79130116c4aab748236257323525e}\label{classcubelattice_1_1cubelattice_af9e79130116c4aab748236257323525e}} 
+{\bfseries lb}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a089f369e0885c11355a97f380f7947d5}\label{classcubelattice_1_1cubelattice_a089f369e0885c11355a97f380f7947d5}} 
+{\bfseries ub}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a50ea98e473f9b332e71463bfbe630c07}\label{classcubelattice_1_1cubelattice_a50ea98e473f9b332e71463bfbe630c07}} 
+{\bfseries M}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a9c6005cf860ad675b1ee6add755ba665}\label{classcubelattice_1_1cubelattice_a9c6005cf860ad675b1ee6add755ba665}} 
+{\bfseries b}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a1ad330ec072f3d78e6cf5f0f7e0cf33c}\label{classcubelattice_1_1cubelattice_a1ad330ec072f3d78e6cf5f0f7e0cf33c}} 
+{\bfseries bs}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_ae08aaa5f051ee3f2142958795a04458d}\label{classcubelattice_1_1cubelattice_ae08aaa5f051ee3f2142958795a04458d}} 
+{\bfseries vertices}
+\item 
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_af16e3c6ccb09126b4db91232af5021cc}\label{classcubelattice_1_1cubelattice_af16e3c6ccb09126b4db91232af5021cc}} 
+{\bfseries lattice}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}A class used to Vertex-Facet Lattice from constraints with upper bounds and lower bounds
+
+Attributes
+----------
+dim : int
+    dimension of a set
+lb : array
+    lower bounds
+ub : array
+    upper bounds
+M : array
+    a matrix for affine transformation
+b: array
+    a vector for affine transformation
+bs: array
+    combined upper bounds and lower bounds
+vertices: array
+    vertices of a set
+lattice: array
+    a matrix for FVIM
+
+
+Methods
+-------
+to_lattice()
+    covert to VFL class
+
+compute_lattice()
+    compute the matrix for FVIM
+
+single_split_relu(idx)
+    split operation from one ReLU neuron
+
+compute_vertex()
+    compute vertices of a set
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a877800444043a45c73c988fe0b057950}\label{classcubelattice_1_1cubelattice_a877800444043a45c73c988fe0b057950}} 
+\index{cubelattice\+::cubelattice@{cubelattice\+::cubelattice}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!cubelattice\+::cubelattice@{cubelattice\+::cubelattice}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def cubelattice.\+cubelattice.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{lb,  }\item[{}]{ub }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Parameters
+----------
+lb : array
+    lower bounds
+ub : array
+    upper bounds
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcubelattice_1_1cubelattice_a8bc4766c57d45c810334d87ad78ca653}\label{classcubelattice_1_1cubelattice_a8bc4766c57d45c810334d87ad78ca653}} 
+\index{cubelattice\+::cubelattice@{cubelattice\+::cubelattice}!compute\+\_\+lattice@{compute\+\_\+lattice}}
+\index{compute\+\_\+lattice@{compute\+\_\+lattice}!cubelattice\+::cubelattice@{cubelattice\+::cubelattice}}
+\subsubsection{\texorpdfstring{compute\+\_\+lattice()}{compute\_lattice()}}
+{\footnotesize\ttfamily def cubelattice.\+cubelattice.\+compute\+\_\+lattice (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}compute the matrix for FVIM
+
+Return
+------
+a FVIM
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcubelattice_1_1cubelattice_aa93e98a034eb32f37711c461bfd5d7d5}\label{classcubelattice_1_1cubelattice_aa93e98a034eb32f37711c461bfd5d7d5}} 
+\index{cubelattice\+::cubelattice@{cubelattice\+::cubelattice}!compute\+\_\+vertex@{compute\+\_\+vertex}}
+\index{compute\+\_\+vertex@{compute\+\_\+vertex}!cubelattice\+::cubelattice@{cubelattice\+::cubelattice}}
+\subsubsection{\texorpdfstring{compute\+\_\+vertex()}{compute\_vertex()}}
+{\footnotesize\ttfamily def cubelattice.\+cubelattice.\+compute\+\_\+vertex (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute vertices of a set
+
+Return
+------
+vertices 
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classcubelattice_1_1cubelattice_af29b5923e02e375b796f4d175348473f}\label{classcubelattice_1_1cubelattice_af29b5923e02e375b796f4d175348473f}} 
+\index{cubelattice\+::cubelattice@{cubelattice\+::cubelattice}!to\+\_\+lattice@{to\+\_\+lattice}}
+\index{to\+\_\+lattice@{to\+\_\+lattice}!cubelattice\+::cubelattice@{cubelattice\+::cubelattice}}
+\subsubsection{\texorpdfstring{to\+\_\+lattice()}{to\_lattice()}}
+{\footnotesize\ttfamily def cubelattice.\+cubelattice.\+to\+\_\+lattice (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Covert to VFL class
+
+Return
+------
+a vfl
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+class/cubelattice.\+py\end{DoxyCompactItemize}

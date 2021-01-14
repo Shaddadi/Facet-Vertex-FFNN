@@ -1,7 +1,5 @@
 import numpy as np
-import pickle
 import matplotlib.pyplot as plt
-from matplotlib.pyplot import semilogy
 
 
 # logs_facetv: facet-vertex
@@ -17,10 +15,6 @@ def get_data_facetv(facetv):
         rell = 'UNSAT'
 
     return [float(val), rell]
-
-
-
-
 
 
 if __name__ == "__main__":
@@ -40,8 +34,6 @@ if __name__ == "__main__":
     ax = fig.add_axes([0.1, 0.1, 0.8, 0.8])
     ax.semilogy(np.arange(len(time_facetv))+1, time_facetv)
     ax.set_yticks([1,10,100])
-    ax.set_yticklabels([0, 10, 100])
-    plt.xlim([1, 180])
     plt.xlabel('Instances')
     plt.ylabel('Time(sec)')
     plt.title('Figure 3: Test on ACAS Xu networks Property 1-4')

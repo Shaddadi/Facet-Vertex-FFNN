@@ -1,20 +1,65 @@
 import numpy as np
 import time
 import os
-import sys
-import psutil
-import pickle
 import multiprocessing
-from functools import partial
-from multiprocessing import get_context
 
 
 class nnetwork:
+    """
+        A class used to represent the process of VFLs in neural networks
+        ...
+        Attributes
+        ----------
+        W : array
+            weights of each layer in the network
+        b : array
+            bias of each layer in the network
+        numLayer : int
+            the number of layers
+        start_time : float
+            specify the starting time of computation
+        filename: str
+            specify the file path to save results
+        compute_unsafety: bool
+            determine if the unsafe inputs are computed
+        unsafe_domain: array
+            specify the unsafe output domain of the network
+
+        Methods
+        -------
+        verification()
+            a function to verify the reachable output domain
+
+        layerOutput(inputPoly, m, lock=None):
+            compute output reachable sets given a input set in m-th layer
+
+        backtrack(vfl_sets)
+            compute corresponding unsafe input sets given output sets
+
+        singleLayerOutput(inputPoly, layerID)
+            compute output reachable sets of one layer given input sets to this layer
+
+        splitPoly(inputPoly, idx):
+            split one set w.r.t. one neuron
+
+        relu_layer(im_fl, neurons, flag=True)
+            a recursive function to compute reachable sets in one layer
+
+        get_valid_neurons(afl, neurons)
+            a recursive function to identify neurons that split input sets
+        """
 
     def __init__(self, W, b):
+        """
+        Parameters
+        ----------
+        W : array
+            weights of each layer in the network
+        b : array
+            bias of each layer in the network
+        """
         self.W = W
         self.b = b
-        self.c = 0
         self.numLayer = len(W)
         self.start_time = 0
         self.filename = ''
@@ -23,11 +68,29 @@ class nnetwork:
 
 
     def verification(self):
+        """ External verification funtions will be assigned to verify output reachable sets
+        """
         print('Designed to be replaced')
 
 
     # nn output of input starting from mth layer
     def layerOutput(self, inputPoly, m, lock=None):
+        """ Compute output reachable sets given a input set in m-th layer
+        
+        Parameters
+        ----------
+        inputPoly: vfl
+            an input vfl
+        m: int
+            it indicates m-th layer
+        lock: lock
+            it limits multiple access to one file
+
+        Return
+        ------
+        when "compute_unsafety" is set True, it returns unsafe input sets computed by "backtrack"
+        when "compute_unsafety" is set True, it returns none
+        """
 
         inputSets = [inputPoly]
         for i in range(m, self.numLayer):
@@ -58,6 +121,18 @@ class nnetwork:
 
 
     def backtrack(self, vfl_sets):
+        """ Compute corresponding unsafe input sets given output sets
+
+        Parameters
+        ----------
+        vfl_sets: list
+            output reachable sets
+
+        Return
+        ------
+        vfls_unsafe: list
+            unsafe input sets
+        """
         matrix_A = self.unsafe_domain[0]
         vector_d = self.unsafe_domain[1]
 
@@ -77,28 +152,22 @@ class nnetwork:
         return vfls_unsafe
 
 
-    # point output of nn
-    def outputPoint(self, inputPoint):
-        for i in range(self.numLayer):
-            inputPoint = self.singleLayerPointOutput(inputPoint, i)
-
-        return inputPoint
-
-
-    # point output of single layer
-    def singleLayerPointOutput(self, inputPoint, layerID):
-        W = self.W[layerID]
-        b = self.b[layerID]
-        layerPoint = np.dot(W, inputPoint.transpose())+b
-        if layerID == self.numLayer-1:
-            return layerPoint.transpose()
-        else:
-            layerPoint[layerPoint<0] = 0
-            return layerPoint.transpose()
-
-
     # polytope output of single layer
     def singleLayerOutput(self, inputPoly, layerID):
+        """ Compute output reachable sets of one layer given input sets to this layer
+
+        Parameters
+        ----------
+        inputPoly: vfl
+            an input vfl to the layer
+        layerID: int
+            index of the layer
+
+        Return
+        ------
+        polys: list
+            output reachable sets of the layer
+        """
         W = self.W[layerID]
         b = self.b[layerID]
         inputPoly.linearTrans(W, b)
@@ -117,8 +186,22 @@ class nnetwork:
         return polys
 
 
-    # partition one input polytope with a hyberplane
     def splitPoly(self, inputPoly, idx):
+        """ Split one set w.r.t. one neuron
+
+        Parameters
+        ----------
+        inputPoly: vfl
+            an input vfl to the layer
+        idx: int
+            index of the neuron
+
+        Return
+        ------
+        outputPolySets: list
+            splited subsets
+        """
+
         outputPolySets = []
 
         sub0, sub1= inputPoly.single_split_relu(idx)
@@ -130,7 +213,22 @@ class nnetwork:
 
         return outputPolySets
 
+
     def relu_layer(self, im_fl, neurons, flag=True):
+        """ A recursive function to compute reachable sets in one layer
+
+        Parameters
+        ----------
+        im_fl: vfl
+        neurons: array
+            indices of neurons
+
+        Return
+        ------
+        all_fls: list
+            output reachable sets of one layer
+        """
+
         if (neurons.shape[0] == 0) and flag:
             return [im_fl]
 
@@ -151,7 +249,23 @@ class nnetwork:
 
         return all_fls
 
+
     def get_valid_neurons(self, afl, neurons):
+        """ A recursive function to identify neurons that split input sets
+
+        Parameters
+        ----------
+        afl: vfl
+        neurons: array
+            indices of candidiate neurons
+
+        Return
+        ------
+        valid_neurons_neg_pos: array
+            neurons that split the afl
+        valid_neurons_neg: array
+            neurons where the afl locates in their negative domain
+        """
         if neurons.shape[0] ==0:
             vertices = np.dot(afl.vertices, afl.M.T) + afl.b.T
             flag_neg = vertices<=0
