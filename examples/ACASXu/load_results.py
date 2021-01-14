@@ -61,7 +61,7 @@ if __name__ == "__main__":
         lines += filex.read()
         lines += '\n'
     except:
-        lines += 'Memory Error\n\n'
+        lines += 'None\n\n'
 
 
     lines += 'Property 8, Network 29\n'
