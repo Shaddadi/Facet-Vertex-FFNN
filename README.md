@@ -31,10 +31,14 @@ All dependencies are included
 ## Implementation
 To reproduce all the results(~1 hour), run
 ```bash
-sudo chmod +x run_all.sh
+chmod +x run_all.sh
 ./run_all.sh
 ```
+<<<<<<< HEAD
 It will generate the result of our method in Table 1, Table 2, Figure 3 and Figure 4 in the paper.
+=======
+It will generate the result of our method in Table 1, Table 2, Figure 3 and Figure 4 in the paper. Note that you may need to use sudo in front of the command.
+>>>>>>> docker
 
 ***Caution*** The test on ACAS Xu Property 7 and Netwrok1_9 is disabled because its computation time is over 30 minutes. Please run following command if you are intesested in this instance
 ```bash

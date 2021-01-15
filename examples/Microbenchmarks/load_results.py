@@ -1,5 +1,4 @@
 import numpy as np
-import pickle
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import semilogy
 
