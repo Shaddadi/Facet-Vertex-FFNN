@@ -10,7 +10,7 @@ chmod +x property2_N12.sh
 python3 load_results.py
 
 cp ./Figure3.png ../../
-cp ./Figure4.png ../../
+#cp ./Figure4.png ../../
 cp ./Table1.txt ../../
 cd ../../
 
