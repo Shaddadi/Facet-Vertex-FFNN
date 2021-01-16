@@ -236,7 +236,7 @@ if __name__ == "__main__":
             nnet0.unsafe_domain = [unsafe_mat, unsafe_vec]
             unsafe_inputs.extend(pool.imap(partial(nnet0.layerOutput, m=2), nputSets))
             unsafe_inputs = [item for sublist in unsafe_inputs for item in sublist]
-            savemat("logs/unsafe_inputs_p"+p+"_N"+str(i)+str(j)+".mat", {'unsafe_inputs':unsafe_inputs, 'rangex':ranges,'meanx': means})
+            savemat("logs/unsafe_inputs_p"+p+"_N"+str(i)+str(j)+".mat", {'unsafe_inputs':np.array(unsafe_inputs, dtype='object'), 'rangex':ranges,'meanx': means})
         else:
             pool.map(partial(nnet0.layerOutput, m=2, lock=lock), nputSets)
 
